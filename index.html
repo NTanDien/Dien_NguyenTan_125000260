@@ -15,12 +15,6 @@
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Animate.css v4.1.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-  <!-- AOS v2.3.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
-
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -34,9 +28,8 @@
         <span>Auto<strong>Prestige</strong></span>
       </a>
 
-      <button class="nav-toggle" id="nav-toggle" aria-label="Mở menu" aria-expanded="false">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox" aria-label="Mở menu điều hướng" />
+      <label for="nav-toggle" class="nav-toggle" aria-label="Mở menu"><i class="fa-solid fa-bars"></i></label>
 
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#hero"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
@@ -59,17 +52,17 @@
         </video>
       </figure>
       <div class="hero-overlay"></div>
-      <div class="hero-content container animate__animated animate__fadeInUp">
-        <span class="hero-badge animate__animated animate__bounceIn animate__delay-1s">
+      <div class="hero-content container">
+        <span class="hero-badge">
           <i class="fa-solid fa-star"></i> Đại lý Ủy quyền Chính hãng
         </span>
         <h1 class="animate__animated animate__fadeInUp animate__delay-1s">
           Trải nghiệm Đẳng cấp<br /><span class="text-gradient">Mọi Phân Khúc Xe Hơi</span>
         </h1>
-        <p class="hero-desc animate__animated animate__fadeInUp animate__delay-2s">
+        <p class="hero-desc">
           Từ Sedan gia đình tiện nghi, SUV hạng sang đến Siêu xe Cao cấp — AutoPrestige Vietnam đồng hành cùng bạn trên mọi hành trình.
         </p>
-        <div class="hero-cta animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="hero-cta">
           <a href="#showroom" class="btn btn-primary"><i class="fa-solid fa-eye"></i> Khám phá Showroom</a>
           <a href="#booking" class="btn btn-outline"><i class="fa-solid fa-calendar-plus"></i> Đặt lịch Lái thử</a>
         </div>
@@ -79,33 +72,32 @@
     <!-- ============ SHOWROOM SECTION ============ -->
     <section class="showroom" id="showroom">
       <div class="container">
-        <header class="section-header" data-aos="fade-up">
+        <header class="section-header">
           <span class="section-tag"><i class="fa-solid fa-warehouse"></i> Showroom</span>
           <h2>Bộ sưu tập Xe nổi bật</h2>
           <p>Khám phá đa dạng mẫu xe từ phân khúc phổ thông đến siêu sang — tất cả trong một nền tảng duy nhất.</p>
         </header>
 
-        <!-- Bộ lọc phân khúc -->
-        <nav class="filter-bar" aria-label="Lọc phân khúc xe" data-aos="fade-up" data-aos-delay="100">
-          <button class="filter-btn active" data-filter="all">
-            <i class="fa-solid fa-border-all"></i> Tất cả
-          </button>
-          <button class="filter-btn" data-filter="family">
-            <i class="fa-solid fa-people-roof"></i> Hạng Vừa &amp; Gia Đình
-          </button>
-          <button class="filter-btn" data-filter="luxury">
-            <i class="fa-solid fa-gem"></i> Sedan &amp; SUV Hạng Sang
-          </button>
-          <button class="filter-btn" data-filter="supercar">
-            <i class="fa-solid fa-jet-fighter"></i> Siêu Xe Cao Cấp
-          </button>
-        </nav>
+                <!-- Bộ lọc phân khúc Pure CSS (Radio Tabs) -->
+        <div class="filter-controls">
+          <input type="radio" name="car-filter" id="filter-all" class="filter-radio" checked />
+          <label for="filter-all" class="filter-label"><i class="fa-solid fa-border-all"></i> Tất cả</label>
+
+          <input type="radio" name="car-filter" id="filter-family" class="filter-radio" />
+          <label for="filter-family" class="filter-label"><i class="fa-solid fa-people-roof"></i> Hạng Vừa &amp; Gia Đình</label>
+
+          <input type="radio" name="car-filter" id="filter-luxury" class="filter-radio" />
+          <label for="filter-luxury" class="filter-label"><i class="fa-solid fa-gem"></i> Sedan &amp; SUV Hạng Sang</label>
+
+          <input type="radio" name="car-filter" id="filter-supercar" class="filter-radio" />
+          <label for="filter-supercar" class="filter-label"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe Cao Cấp</label>
+        </div>
 
         <!-- Lưới xe -->
         <div class="car-grid" id="car-grid">
 
           <!-- 1. Hạng Vừa & Gia Đình: Toyota Camry -->
-          <article class="car-card" tabindex="0" data-segment="family" data-aos="fade-up" data-aos-delay="100">
+          <article class="car-card" tabindex="0" data-segment="family">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=80" alt="Toyota Camry 2.5Q 2026" loading="lazy" />
               <span class="car-card__badge badge-family"><i class="fa-solid fa-people-roof"></i> Gia Đình</span>
@@ -121,18 +113,18 @@
                 <li><i class="fa-solid fa-gears"></i> E-CVT êm ái</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="Toyota Camry 2.5Q" type="button">
+                <a href="#detail-camry" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="Toyota Camry 2.5Q" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 2. Hạng Vừa & Gia Đình: Mazda CX-5 -->
-          <article class="car-card" tabindex="0" data-segment="family" data-aos="fade-up" data-aos-delay="150">
+          <article class="car-card" tabindex="0" data-segment="family">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1606611013004-1a462aa08a79?auto=format&fit=crop&w=800&q=80" alt="Mazda CX-5 2.0 Premium 2026" loading="lazy" />
               <span class="car-card__badge badge-family"><i class="fa-solid fa-people-roof"></i> Gia Đình</span>
@@ -148,18 +140,18 @@
                 <li><i class="fa-solid fa-gears"></i> Tự động 6 cấp</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="Mazda CX-5 Premium" type="button">
+                <a href="#detail-cx5" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="Mazda CX-5 Premium" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 3. Hạng Vừa & Gia Đình: Hyundai Santa Fe -->
-          <article class="car-card" tabindex="0" data-segment="family" data-aos="fade-up" data-aos-delay="200">
+          <article class="car-card" tabindex="0" data-segment="family">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Hyundai Santa Fe 2026" loading="lazy" />
               <span class="car-card__badge badge-family"><i class="fa-solid fa-people-roof"></i> Gia Đình</span>
@@ -175,18 +167,18 @@
                 <li><i class="fa-solid fa-gears"></i> HTRAC AWD 8DCT</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="Hyundai Santa Fe Turbo" type="button">
+                <a href="#detail-santafe" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="Hyundai Santa Fe Turbo" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 4. Hạng Vừa & Gia Đình: Honda CR-V e:HEV -->
-          <article class="car-card" tabindex="0" data-segment="family" data-aos="fade-up" data-aos-delay="250">
+          <article class="car-card" tabindex="0" data-segment="family">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1590362891988-f778047831d6?auto=format&fit=crop&w=800&q=80" alt="Honda CR-V e:HEV RS 2026" loading="lazy" />
               <span class="car-card__badge badge-family"><i class="fa-solid fa-people-roof"></i> Gia Đình</span>
@@ -202,18 +194,18 @@
                 <li><i class="fa-solid fa-gears"></i> Gói Honda SENSING</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="Honda CR-V e:HEV RS" type="button">
+                <a href="#detail-crv" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="Honda CR-V e:HEV RS" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 5. Sedan & SUV Hạng Sang: BMW 530i M Sport -->
-          <article class="car-card" tabindex="0" data-segment="luxury" data-aos="fade-up" data-aos-delay="100">
+          <article class="car-card" tabindex="0" data-segment="luxury">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="BMW 5 Series 530i M Sport 2026" loading="lazy" />
               <span class="car-card__badge badge-luxury"><i class="fa-solid fa-gem"></i> Hạng Sang</span>
@@ -229,18 +221,18 @@
                 <li><i class="fa-solid fa-gears"></i> ZF 8 cấp Steptronic</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="BMW 530i M Sport" type="button">
+                <a href="#detail-bmw530i" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="BMW 530i M Sport" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 6. Sedan & SUV Hạng Sang: Mercedes GLC 300 AMG -->
-          <article class="car-card" tabindex="0" data-segment="luxury" data-aos="fade-up" data-aos-delay="150">
+          <article class="car-card" tabindex="0" data-segment="luxury">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz GLC 300 AMG 2026" loading="lazy" />
               <span class="car-card__badge badge-luxury"><i class="fa-solid fa-gem"></i> Hạng Sang</span>
@@ -256,18 +248,18 @@
                 <li><i class="fa-solid fa-gears"></i> 9G-Tronic 4MATIC</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="Mercedes GLC 300 AMG" type="button">
+                <a href="#detail-glc300" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="Mercedes GLC 300 AMG" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 7. Sedan & SUV Hạng Sang: Audi A6 S-Line -->
-          <article class="car-card" tabindex="0" data-segment="luxury" data-aos="fade-up" data-aos-delay="200">
+          <article class="car-card" tabindex="0" data-segment="luxury">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80" alt="Audi A6 S-Line TFSI 2026" loading="lazy" />
               <span class="car-card__badge badge-luxury"><i class="fa-solid fa-gem"></i> Hạng Sang</span>
@@ -283,18 +275,18 @@
                 <li><i class="fa-solid fa-gears"></i> S-tronic 7 Quattro</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="Audi A6 S-Line TFSI" type="button">
+                <a href="#detail-audia6" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="Audi A6 S-Line TFSI" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 8. Sedan & SUV Hạng Sang: Lexus RX 350 Luxury -->
-          <article class="car-card" tabindex="0" data-segment="luxury" data-aos="fade-up" data-aos-delay="250">
+          <article class="car-card" tabindex="0" data-segment="luxury">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=800&q=80" alt="Lexus RX 350 Luxury 2026" loading="lazy" />
               <span class="car-card__badge badge-luxury"><i class="fa-solid fa-gem"></i> Hạng Sang</span>
@@ -310,18 +302,18 @@
                 <li><i class="fa-solid fa-gears"></i> Direct-Shift 8AT AWD</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="Lexus RX 350 Luxury" type="button">
+                <a href="#detail-lexusrx" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="Lexus RX 350 Luxury" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 9. Siêu Xe Cao Cấp: Porsche 911 Carrera S -->
-          <article class="car-card" tabindex="0" data-segment="supercar" data-aos="fade-up" data-aos-delay="100">
+          <article class="car-card" tabindex="0" data-segment="supercar">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=800&q=80" alt="Porsche 911 Carrera S 2026" loading="lazy" />
               <span class="car-card__badge badge-supercar"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe</span>
@@ -337,18 +329,18 @@
                 <li><i class="fa-solid fa-gears"></i> PDK 8 cấp thể thao</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="Porsche 911 Carrera S" type="button">
+                <a href="#detail-porsche911" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="Porsche 911 Carrera S" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 10. Siêu Xe Cao Cấp: Lamborghini Huracán EVO -->
-          <article class="car-card" tabindex="0" data-segment="supercar" data-aos="fade-up" data-aos-delay="150">
+          <article class="car-card" tabindex="0" data-segment="supercar">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?auto=format&fit=crop&w=800&q=80" alt="Lamborghini Huracán EVO 2026" loading="lazy" />
               <span class="car-card__badge badge-supercar"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe</span>
@@ -364,18 +356,18 @@
                 <li><i class="fa-solid fa-gears"></i> LDF 7 cấp / 0-100: 2.9s</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="Lamborghini Huracán EVO" type="button">
+                <a href="#detail-huracan" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="Lamborghini Huracán EVO" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 11. Siêu Xe Cao Cấp: Ferrari F8 Tributo -->
-          <article class="car-card" tabindex="0" data-segment="supercar" data-aos="fade-up" data-aos-delay="200">
+          <article class="car-card" tabindex="0" data-segment="supercar">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800&q=80" alt="Ferrari F8 Tributo 2026" loading="lazy" />
               <span class="car-card__badge badge-supercar"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe</span>
@@ -391,18 +383,18 @@
                 <li><i class="fa-solid fa-gears"></i> F1 7 cấp / Top 340 km/h</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="Ferrari F8 Tributo" type="button">
+                <a href="#detail-ferrari-f8" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="Ferrari F8 Tributo" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 12. Siêu Xe Cao Cấp: McLaren 720S Spider -->
-          <article class="car-card" tabindex="0" data-segment="supercar" data-aos="fade-up" data-aos-delay="250">
+          <article class="car-card" tabindex="0" data-segment="supercar">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=800&q=80" alt="McLaren 720S Spider 2026" loading="lazy" />
               <span class="car-card__badge badge-supercar"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe</span>
@@ -418,12 +410,12 @@
                 <li><i class="fa-solid fa-gears"></i> SSG 7 cấp / Khung Carbon</li>
               </ul>
               <div class="car-card__actions">
-                <button class="btn btn-outline btn-detail" data-car="McLaren 720S Spider" type="button">
+                <a href="#detail-mclaren-720s" class="btn btn-outline btn-detail">
                   <i class="fa-solid fa-circle-info"></i> Chi tiết
-                </button>
-                <button class="btn btn-primary btn-book" data-car="McLaren 720S Spider" type="button">
+                </a>
+                <a href="#booking" class="btn btn-primary btn-book">
                   <i class="fa-solid fa-calendar-check"></i> Lái thử
-                </button>
+                </a>
               </div>
             </div>
           </article>
@@ -435,7 +427,7 @@
     <!-- ============ DỊCH VỤ & QUYỀN LỢI ============ -->
     <section class="services" id="services">
       <div class="container">
-        <header class="section-header" data-aos="fade-up">
+        <header class="section-header">
           <span class="section-tag"><i class="fa-solid fa-hand-holding-heart"></i> Quyền lợi</span>
           <h2>Dịch vụ &amp; Quyền lợi Khách hàng</h2>
           <p>AutoPrestige Vietnam cam kết mang đến trải nghiệm sở hữu xe toàn diện và an tâm nhất.</p>
@@ -443,7 +435,7 @@
 
         <div class="services-grid">
 
-          <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+          <article class="service-card">
             <div class="service-card__icon">
               <i class="fa-solid fa-percent"></i>
             </div>
@@ -451,7 +443,7 @@
             <p>Hỗ trợ vay tối đa 80% giá trị xe, thủ tục nhanh gọn chỉ trong 24 giờ. Hợp tác cùng 12 ngân hàng hàng đầu.</p>
           </article>
 
-          <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+          <article class="service-card">
             <div class="service-card__icon">
               <i class="fa-solid fa-arrow-right-arrow-left"></i>
             </div>
@@ -459,7 +451,7 @@
             <p>Định giá xe cũ minh bạch qua AI, hỗ trợ bù trừ linh hoạt khi nâng cấp lên xe mới bất kỳ phân khúc nào.</p>
           </article>
 
-          <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+          <article class="service-card">
             <div class="service-card__icon">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
@@ -467,7 +459,7 @@
             <p>Chế độ bảo hành chính hãng lên đến 5 năm hoặc 150.000 km, áp dụng toàn quốc tại hơn 50 đại lý.</p>
           </article>
 
-          <article class="service-card" data-aos="fade-up" data-aos-delay="400">
+          <article class="service-card">
             <div class="service-card__icon">
               <i class="fa-solid fa-truck-medical"></i>
             </div>
@@ -482,13 +474,13 @@
     <!-- ============ BẢNG SO SÁNH TƯ VẤN ============ -->
     <section class="compare" id="compare">
       <div class="container">
-        <header class="section-header" data-aos="fade-up">
+        <header class="section-header">
           <span class="section-tag"><i class="fa-solid fa-scale-balanced"></i> So sánh</span>
           <h2>Tư vấn phân khúc phù hợp với bạn</h2>
           <p>So sánh nhanh ba phân khúc xe để tìm lựa chọn phù hợp nhất với nhu cầu và ngân sách của bạn.</p>
         </header>
 
-        <div class="compare-table-wrap" data-aos="fade-up" data-aos-delay="100">
+        <div class="compare-table-wrap">
           <table class="compare-table">
             <thead>
               <tr>
@@ -539,7 +531,7 @@
           </table>
         </div>
 
-        <aside class="compare-tip" data-aos="fade-up" data-aos-delay="200">
+        <aside class="compare-tip">
           <i class="fa-solid fa-lightbulb"></i>
           <p><strong>Mẹo từ chuyên gia:</strong> Nếu bạn lần đầu mua xe, hãy bắt đầu từ phân khúc <em>Hạng Vừa & Gia Đình</em> — chi phí vận hành thấp, giá trị bán lại ổn định, và công nghệ an toàn đã rất đầy đủ.</p>
         </aside>
@@ -549,13 +541,13 @@
     <!-- ============ FORM ĐẶT LỊCH LÁI THỬ ============ -->
     <section class="booking" id="booking">
       <div class="container">
-        <header class="section-header" data-aos="fade-up">
+        <header class="section-header">
           <span class="section-tag"><i class="fa-solid fa-calendar-check"></i> Đặt lịch</span>
           <h2>Đặt lịch Lái thử &amp; Nhận Báo giá Lăn bánh</h2>
           <p>Điền thông tin bên dưới, đội ngũ tư vấn AutoPrestige sẽ liên hệ bạn trong vòng 30 phút.</p>
         </header>
 
-        <form class="booking-form" id="booking-form" data-aos="fade-up" data-aos-delay="100" novalidate>
+        <form class="booking-form" id="booking-form" novalidate>
           <div class="form-grid">
             <div class="form-group">
               <label for="fullname"><i class="fa-solid fa-user"></i> Họ và tên <span class="required">*</span></label>
@@ -615,30 +607,351 @@
       </div>
     </section>
 
-    <!-- ============ MODAL CHI TIẾT XE ============ -->
-    <div class="modal" id="car-detail-modal" aria-hidden="true" role="dialog" aria-modal="true">
-      <div class="modal-backdrop" id="modal-backdrop"></div>
-      <div class="modal-container">
-        <button class="modal-close" id="modal-close" aria-label="Đóng hộp thoại">&times;</button>
+  
+    <!-- ============ PURE CSS MODALS (:target) CHO TỪNG DÒNG XE ============ -->
+    <div class="modal-target" id="detail-camry">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
         <div class="modal-content-grid">
           <div class="modal-media">
-            <img id="modal-img" src="" alt="" />
-            <span class="modal-media__badge" id="modal-badge"></span>
+            <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=1200&q=80" alt="Toyota Camry 2.5Q" loading="lazy" />
+            <span class="modal-media__badge badge-family">Hạng Vừa & Gia Đình</span>
           </div>
           <div class="modal-info">
             <div class="modal-header-info">
-              <h3 class="modal-title" id="modal-title"></h3>
-              <p class="modal-price" id="modal-price"></p>
+              <h3 class="modal-title">Toyota Camry 2.5Q</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 1.149 tỷ VNĐ</p>
             </div>
-            <p class="modal-desc" id="modal-desc"></p>
+            <p class="modal-desc">Toyota Camry 2.5Q thế hệ mới sở hữu ngôn ngữ thiết kế sang trọng, lịch lãm cùng hệ truyền động Hybrid tiên tiến, mang lại khả năng tiết kiệm nhiên liệu tối ưu chỉ 4.4L/100km.</p>
             <table class="modal-specs-table">
-              <tbody id="modal-specs-body">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>2.5L xăng kết hợp Motor điện (HEV)</strong></td></tr><tr><td>Công suất cực đại</td><td><strong>209 mã lực</strong></td></tr><tr><td>Hộp số</td><td><strong>E-CVT vô cấp biến thiên thông minh</strong></td></tr><tr><td>Mức tiêu hao</td><td><strong>4.4 Lít / 100km</strong></td></tr><tr><td>Hệ thống an toàn</td><td><strong>Toyota Safety Sense 3.0 (PCS, DRCC, LTA)</strong></td></tr><tr><td>Bảo hành chính hãng</td><td><strong>5 năm hoặc 150.000 km (Pin Hybrid 7 năm)</strong></td></tr>
               </tbody>
             </table>
             <div class="modal-actions">
-              <button class="btn btn-primary" id="modal-book-btn" type="button">
+              <a href="#booking" class="btn btn-primary">
                 <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
-              </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-cx5">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1606611013004-1a462aa08a79?auto=format&fit=crop&w=1200&q=80" alt="Mazda CX-5 Premium" loading="lazy" />
+            <span class="modal-media__badge badge-family">Hạng Vừa & Gia Đình</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">Mazda CX-5 Premium</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 929 triệu VNĐ</p>
+            </div>
+            <p class="modal-desc">Mẫu Crossover ăn khách hàng đầu với ngôn ngữ thiết kế KODO tinh tế. Không gian nội thất da cao cấp bọc tỉ mỉ cùng hệ thống âm thanh vòm 10 loa Bose sống động.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>SkyActiv-G 2.0L DOHC</strong></td></tr><tr><td>Công suất</td><td><strong>154 mã lực @ 6,000 rpm</strong></td></tr><tr><td>Hộp số</td><td><strong>Tự động 6 cấp thể thao với lẫy chuyển số</strong></td></tr><tr><td>Hệ thống treo</td><td><strong>MacPherson độc lập / Liên kết đa điểm</strong></td></tr><tr><td>Tiện nghi</td><td><strong>Âm thanh 10 loa Bose, Cửa sổ trời, HUD</strong></td></tr><tr><td>An toàn chủ động</td><td><strong>Gói an toàn i-Activsense cao cấp</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-santafe">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80" alt="Hyundai Santa Fe Turbo" loading="lazy" />
+            <span class="modal-media__badge badge-family">Hạng Vừa & Gia Đình</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">Hyundai Santa Fe Turbo</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 1.365 tỷ VNĐ</p>
+            </div>
+            <p class="modal-desc">Diện mạo hình hộp bứt phá phong cách SUV đô thị tương lai. Không gian 7 chỗ rộng rãi đỉnh phân khúc, trang bị màn hình cong panorama kép 12.3 inch siêu nét.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>Smartstream 2.5L T-GDi Turbo</strong></td></tr><tr><td>Công suất cực đại</td><td><strong>281 mã lực / Mô-men xoắn 422 Nm</strong></td></tr><tr><td>Dẫn động</td><td><strong>4 bánh toàn thời gian thông minh HTRAC</strong></td></tr><tr><td>Hộp số</td><td><strong>Ly hợp kép ướt 8 cấp 8DCT</strong></td></tr><tr><td>Không gian</td><td><strong>7 chỗ ngồi, ghế thương gia hàng hai có đệm chân</strong></td></tr><tr><td>Tiện ích</td><td><strong>Sạc không dây kép, Cửa sổ trời toàn cảnh kép</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-crv">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1590362891988-f778047831d6?auto=format&fit=crop&w=1200&q=80" alt="Honda CR-V e:HEV RS" loading="lazy" />
+            <span class="modal-media__badge badge-family">Hạng Vừa & Gia Đình</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">Honda CR-V e:HEV RS</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 1.259 tỷ VNĐ</p>
+            </div>
+            <p class="modal-desc">Phiên bản thể thao RS danh giá kết hợp công nghệ 2 motor điện Hybrid tân tiến. Vừa mạnh mẽ với gia tốc tức thì, vừa siêu tiết kiệm nhiên liệu.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>2.0L DOHC kết hợp hệ thống 2 Mô-tơ Hybrid</strong></td></tr><tr><td>Công suất tổng</td><td><strong>204 mã lực / 335 Nm mô-men xoắn</strong></td></tr><tr><td>Mức tiêu hao đô thị</td><td><strong>3.4 Lít / 100km</strong></td></tr><tr><td>Công nghệ an toàn</td><td><strong>Honda SENSING nâng cấp có Camera 360</strong></td></tr><tr><td>Tiện nghi</td><td><strong>Honda CONNECT kết nối smartphone, thẻ khóa từ thông minh</strong></td></tr><tr><td>Xuất xứ</td><td><strong>Nhập khẩu nguyên chiếc từ Thái Lan</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-bmw530i">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80" alt="BMW 530i M Sport" loading="lazy" />
+            <span class="modal-media__badge badge-luxury">Sedan & SUV Hạng Sang</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">BMW 530i M Sport</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 3.199 tỷ VNĐ</p>
+            </div>
+            <p class="modal-desc">Biểu tượng sedan doanh nhân hoàn hảo kết hợp cảm giác lái thuần chất xứ Bavaria và vẻ đẹp thể thao quyến rũ của gói trang bị M Sport.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>2.0L BMW TwinPower Turbo 4-xy lanh</strong></td></tr><tr><td>Công suất</td><td><strong>252 mã lực / Mô-men xoắn 350 Nm</strong></td></tr><tr><td>Tăng tốc 0-100 km/h</td><td><strong>6.4 giây</strong></td></tr><tr><td>Hộp số</td><td><strong>Tự động 8 cấp Steptronic Sport danh tiếng</strong></td></tr><tr><td>Hệ thống lái</td><td><strong>BMW Live Cockpit Professional, HUD đa sắc</strong></td></tr><tr><td>Âm thanh</td><td><strong>Harman Kardon 16 loa vòm công suất 464W</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-glc300">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=1200&q=80" alt="Mercedes GLC 300 AMG" loading="lazy" />
+            <span class="modal-media__badge badge-luxury">Sedan & SUV Hạng Sang</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">Mercedes GLC 300 AMG</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 2.599 tỷ VNĐ</p>
+            </div>
+            <p class="modal-desc">Dòng SUV hạng sang bán chạy nhất Việt Nam. Thiết kế AMG Line thể thao, đèn chiếu sáng DIGITAL LIGHT đỉnh cao công nghệ và nội thất da Artico/Dinamica.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>2.0L Turbo kết hợp Mild-Hybrid 48V (ISG)</strong></td></tr><tr><td>Công suất</td><td><strong>258 mã lực + 23 HP boost điện</strong></td></tr><tr><td>Hộp số & Dẫn động</td><td><strong>9G-Tronic / 4MATIC toàn thời gian</strong></td></tr><tr><td>Đèn pha</td><td><strong>DIGITAL LIGHT phân giải 2.6 triệu pixel</strong></td></tr><tr><td>Màn hình trung tâm</td><td><strong>11.9 inch cảm ứng nghiêng OLED MBUX NTG7</strong></td></tr><tr><td>Âm thanh</td><td><strong>Burmester 3D High-End 15 loa 710W</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-audia6">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=80" alt="Audi A6 S-Line TFSI" loading="lazy" />
+            <span class="modal-media__badge badge-luxury">Sedan & SUV Hạng Sang</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">Audi A6 S-Line TFSI</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 2.780 tỷ VNĐ</p>
+            </div>
+            <p class="modal-desc">Sedan hạng sang mang phong cách công nghệ tinh tế đến từ Đức. Khung gầm nhôm nhẹ vững chãi, hệ dẫn động bốn bánh toàn thời gian Quattro lừng danh.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>2.0L TFSI MHEV Mild-Hybrid 12V</strong></td></tr><tr><td>Công suất</td><td><strong>245 mã lực / Mô-men xoắn 370 Nm</strong></td></tr><tr><td>Hệ dẫn động</td><td><strong>Quattro thông minh 4 bánh toàn thời gian</strong></td></tr><tr><td>Hộp số</td><td><strong>7 cấp S-tronic ly hợp kép phản hồi tức thì</strong></td></tr><tr><td>Buồng lái số</td><td><strong>Audi Virtual Cockpit Plus kép 10.1 & 8.6 inch</strong></td></tr><tr><td>Hệ thống đèn</td><td><strong>HD Matrix LED với đèn báo rẽ tia năng động</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-lexusrx">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1200&q=80" alt="Lexus RX 350 Luxury" loading="lazy" />
+            <span class="modal-media__badge badge-luxury">Sedan & SUV Hạng Sang</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">Lexus RX 350 Luxury</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 4.330 tỷ VNĐ</p>
+            </div>
+            <p class="modal-desc">Chuẩn mực độ êm ái và tin cậy tuyệt đối của người Nhật. Khoang xe tĩnh lặng tuyệt đối cùng nội thất bọc da Semi-Aniline thượng hạng và gỗ cao cấp Shimamoku.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>2.4L Turbo 4-xy lanh thế hệ mới (T24A-FTS)</strong></td></tr><tr><td>Công suất</td><td><strong>275 mã lực / Mô-men xoắn 430 Nm</strong></td></tr><tr><td>Hộp số</td><td><strong>Direct-Shift 8 cấp kết hợp hệ thống AWD điện tử</strong></td></tr><tr><td>Âm thanh</td><td><strong>Mark Levinson 21 loa vòm rạp hát tại gia</strong></td></tr><tr><td>Gói an toàn</td><td><strong>Lexus Safety System+ 3.0 thế hệ mới nhất</strong></td></tr><tr><td>Nội thất</td><td><strong>Ghế da Semi-Aniline chỉnh điện 14 hướng, nhớ 3 vị trí</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-porsche911">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1200&q=80" alt="Porsche 911 Carrera S" loading="lazy" />
+            <span class="modal-media__badge badge-supercar">Siêu Xe Cao Cấp</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">Porsche 911 Carrera S</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 8.210 tỷ VNĐ</p>
+            </div>
+            <p class="modal-desc">Huyền thoại xe thể thao bất tử của mọi thời đại. Trọng tâm cực thấp, động cơ Boxer đặt sau trứ danh cùng khả năng kiểm soát thân xe chính xác đến từng milimet.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>3.0L 6-xy lanh Boxer Twin-Turbo</strong></td></tr><tr><td>Công suất</td><td><strong>450 mã lực @ 6,500 rpm / 530 Nm</strong></td></tr><tr><td>Tăng tốc 0-100 km/h</td><td><strong>3.5 giây (với gói Sport Chrono)</strong></td></tr><tr><td>Tốc độ tối đa</td><td><strong>308 km/h</strong></td></tr><tr><td>Hộp số</td><td><strong>PDK 8 cấp ly hợp kép độc quyền Porsche</strong></td></tr><tr><td>Hệ thống lái</td><td><strong>PASM điều khiển giảm chấn điện tử chủ động</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-huracan">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?auto=format&fit=crop&w=1200&q=80" alt="Lamborghini Huracán EVO" loading="lazy" />
+            <span class="modal-media__badge badge-supercar">Siêu Xe Cao Cấp</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">Lamborghini Huracán EVO</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 16.880 tỷ VNĐ</p>
+            </div>
+            <p class="modal-desc">Mãnh thú cơ bắp Ý sở hữu khối động cơ V10 hút khí tự nhiên gầm vang kích thích tột độ. Hệ thống kiểm soát động lực xe tích hợp LDVI thông minh.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>5.2L V10 Hút khí tự nhiên (Naturally Aspirated)</strong></td></tr><tr><td>Công suất cực đại</td><td><strong>640 mã lực @ 8,000 rpm / 600 Nm</strong></td></tr><tr><td>Gia tốc 0-100 km/h</td><td><strong>2.9 giây | 0-200 km/h trong 9.0s</strong></td></tr><tr><td>Vận tốc tối đa</td><td><strong>Hơn 325 km/h</strong></td></tr><tr><td>Hệ thống lái</td><td><strong>Đánh lái 4 bánh (All-Wheel Steering) & Torque Vectoring</strong></td></tr><tr><td>Bộ phanh</td><td><strong>Đĩa phanh Gốm-Carbon (Carbon Ceramic CCB)</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-ferrari-f8">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=1200&q=80" alt="Ferrari F8 Tributo" loading="lazy" />
+            <span class="modal-media__badge badge-supercar">Siêu Xe Cao Cấp</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">Ferrari F8 Tributo</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 19.500 tỷ VNĐ</p>
+            </div>
+            <p class="modal-desc">Tuyệt tác siêu xe tôn vinh cỗ máy V8 mạnh mẽ nhất trong lịch sử Ferrari. Thiết kế khí động học thừa hưởng trực tiếp từ đường đua F1 với cánh gió S-Duct.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>3.9L V8 90 độ Twin-Turbo đoạt giải Engine of the Year</strong></td></tr><tr><td>Công suất</td><td><strong>720 mã lực @ 7,000 rpm (185 hp/lít)</strong></td></tr><tr><td>Gia tốc 0-100 km/h</td><td><strong>2.9 giây | 0-200 km/h: 7.8 giây</strong></td></tr><tr><td>Tốc độ tối đa</td><td><strong>340 km/h</strong></td></tr><tr><td>Khí động học</td><td><strong>S-Duct tăng 15% lực ép mặt đường (Downforce)</strong></td></tr><tr><td>Hệ thống hỗ trợ</td><td><strong>Side Slip Angle Control 6.1 (SSC) drift tối thượng</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-target" id="detail-mclaren-720s">
+      <a href="#showroom" class="modal-target__backdrop" aria-label="Đóng popup"></a>
+      <div class="modal-target__container">
+        <a href="#showroom" class="modal-target__close" aria-label="Đóng">&times;</a>
+        <div class="modal-content-grid">
+          <div class="modal-media">
+            <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=1200&q=80" alt="McLaren 720S Spider" loading="lazy" />
+            <span class="modal-media__badge badge-supercar">Siêu Xe Cao Cấp</span>
+          </div>
+          <div class="modal-info">
+            <div class="modal-header-info">
+              <h3 class="modal-title">McLaren 720S Spider</h3>
+              <p class="modal-price"><i class="fa-solid fa-tag"></i> 23.800 tỷ VNĐ</p>
+            </div>
+            <p class="modal-desc">Siêu phẩm mui trần bằng sợi carbon siêu nhẹ từ Anh Quốc. Mui xếp cứng điện tử đóng mở thần tốc chỉ trong 11 giây ngay cả khi xe đang chạy ở 50 km/h.</p>
+            <table class="modal-specs-table">
+              <tbody>
+                <tr><td>Động cơ</td><td><strong>4.0L V8 Twin-Turbo M840T</strong></td></tr><tr><td>Công suất</td><td><strong>720 mã lực / 770 Nm mô-men xoắn</strong></td></tr><tr><td>Trọng lượng khô</td><td><strong>Chỉ 1,332 kg (Khung Monocage II-S Carbon)</strong></td></tr><tr><td>Tăng tốc 0-100 km/h</td><td><strong>2.9 giây | 0-200 km/h: 7.9 giây</strong></td></tr><tr><td>Tốc độ tối đa</td><td><strong>341 km/h (Mở mui: 325 km/h)</strong></td></tr><tr><td>Hệ thống treo</td><td><strong>Proactive Chassis Control II thủy lực độc quyền</strong></td></tr>
+              </tbody>
+            </table>
+            <div class="modal-actions">
+              <a href="#booking" class="btn btn-primary">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử ngay
+              </a>
             </div>
           </div>
         </div>
@@ -690,371 +1003,5 @@
       </div>
     </div>
   </footer>
-
-  <!-- ============ SCRIPTS ============ -->
-  <!-- AOS v2.3.1 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
-
-  <script>
-    /* === AOS Init === */
-    AOS.init({
-      duration: 800,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 60
-    });
-
-    /* === Mobile Nav Toggle === */
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks  = document.getElementById('nav-links');
-
-    navToggle.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-      navToggle.querySelector('i').className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-    });
-
-    // Đóng menu khi click link
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.querySelector('i').className = 'fa-solid fa-bars';
-      });
-    });
-
-    /* === Header Scroll Shadow === */
-    const siteHeader = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      siteHeader.classList.toggle('scrolled', window.scrollY > 50);
-    });
-
-
-    /* === DATABASE CHI TIẾT 12 DÒNG XE === */
-    const CAR_DATABASE = {
-      "Toyota Camry 2.5Q": {
-        segment: "Hạng Vừa & Gia Đình",
-        badgeClass: "badge-family",
-        price: "1.149 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=1200&q=80",
-        desc: "Toyota Camry 2.5Q thế hệ mới sở hữu ngôn ngữ thiết kế sang trọng, lịch lãm cùng hệ truyền động Hybrid tiên tiến, mang lại khả năng tiết kiệm nhiên liệu tối ưu chỉ 4.4L/100km.",
-        specs: {
-          "Động cơ": "2.5L xăng kết hợp Motor điện (HEV)",
-          "Công suất cực đại": "209 mã lực",
-          "Hộp số": "E-CVT vô cấp biến thiên thông minh",
-          "Mức tiêu hao": "4.4 Lít / 100km",
-          "Hệ thống an toàn": "Toyota Safety Sense 3.0 (PCS, DRCC, LTA)",
-          "Bảo hành chính hãng": "5 năm hoặc 150.000 km (Pin Hybrid 7 năm)"
-        }
-      },
-      "Mazda CX-5 Premium": {
-        segment: "Hạng Vừa & Gia Đình",
-        badgeClass: "badge-family",
-        price: "929 triệu VNĐ",
-        image: "https://images.unsplash.com/photo-1606611013004-1a462aa08a79?auto=format&fit=crop&w=1200&q=80",
-        desc: "Mẫu Crossover ăn khách hàng đầu với ngôn ngữ thiết kế KODO tinh tế. Không gian nội thất da cao cấp bọc tỉ mỉ cùng hệ thống âm thanh vòm 10 loa Bose sống động.",
-        specs: {
-          "Động cơ": "SkyActiv-G 2.0L DOHC",
-          "Công suất": "154 mã lực @ 6,000 rpm",
-          "Hộp số": "Tự động 6 cấp thể thao với lẫy chuyển số",
-          "Hệ thống treo": "MacPherson độc lập / Liên kết đa điểm",
-          "Tiện nghi": "Âm thanh 10 loa Bose, Cửa sổ trời, HUD",
-          "An toàn chủ động": "Gói an toàn i-Activsense cao cấp"
-        }
-      },
-      "Hyundai Santa Fe Turbo": {
-        segment: "Hạng Vừa & Gia Đình",
-        badgeClass: "badge-family",
-        price: "1.365 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
-        desc: "Diện mạo hình hộp bứt phá phong cách SUV đô thị tương lai. Không gian 7 chỗ rộng rãi đỉnh phân khúc, trang bị màn hình cong panorama kép 12.3 inch siêu nét.",
-        specs: {
-          "Động cơ": "Smartstream 2.5L T-GDi Turbo",
-          "Công suất cực đại": "281 mã lực / Mô-men xoắn 422 Nm",
-          "Dẫn động": "4 bánh toàn thời gian thông minh HTRAC",
-          "Hộp số": "Ly hợp kép ướt 8 cấp 8DCT",
-          "Không gian": "7 chỗ ngồi, ghế thương gia hàng hai có đệm chân",
-          "Tiện ích": "Sạc không dây kép, Cửa sổ trời toàn cảnh kép"
-        }
-      },
-      "Honda CR-V e:HEV RS": {
-        segment: "Hạng Vừa & Gia Đình",
-        badgeClass: "badge-family",
-        price: "1.259 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1590362891988-f778047831d6?auto=format&fit=crop&w=1200&q=80",
-        desc: "Phiên bản thể thao RS danh giá kết hợp công nghệ 2 motor điện Hybrid tân tiến. Vừa mạnh mẽ với gia tốc tức thì, vừa siêu tiết kiệm nhiên liệu.",
-        specs: {
-          "Động cơ": "2.0L DOHC kết hợp hệ thống 2 Mô-tơ Hybrid",
-          "Công suất tổng": "204 mã lực / 335 Nm mô-men xoắn",
-          "Mức tiêu hao đô thị": "3.4 Lít / 100km",
-          "Công nghệ an toàn": "Honda SENSING nâng cấp có Camera 360",
-          "Tiện nghi": "Honda CONNECT kết nối smartphone, thẻ khóa từ thông minh",
-          "Xuất xứ": "Nhập khẩu nguyên chiếc từ Thái Lan"
-        }
-      },
-      "BMW 530i M Sport": {
-        segment: "Sedan & SUV Hạng Sang",
-        badgeClass: "badge-luxury",
-        price: "3.199 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80",
-        desc: "Biểu tượng sedan doanh nhân hoàn hảo kết hợp cảm giác lái thuần chất xứ Bavaria và vẻ đẹp thể thao quyến rũ của gói trang bị M Sport.",
-        specs: {
-          "Động cơ": "2.0L BMW TwinPower Turbo 4-xy lanh",
-          "Công suất": "252 mã lực / Mô-men xoắn 350 Nm",
-          "Tăng tốc 0-100 km/h": "6.4 giây",
-          "Hộp số": "Tự động 8 cấp Steptronic Sport danh tiếng",
-          "Hệ thống lái": "BMW Live Cockpit Professional, HUD đa sắc",
-          "Âm thanh": "Harman Kardon 16 loa vòm công suất 464W"
-        }
-      },
-      "Mercedes GLC 300 AMG": {
-        segment: "Sedan & SUV Hạng Sang",
-        badgeClass: "badge-luxury",
-        price: "2.599 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=1200&q=80",
-        desc: "Dòng SUV hạng sang bán chạy nhất Việt Nam. Thiết kế AMG Line thể thao, đèn chiếu sáng DIGITAL LIGHT đỉnh cao công nghệ và nội thất da Artico/Dinamica.",
-        specs: {
-          "Động cơ": "2.0L Turbo kết hợp Mild-Hybrid 48V (ISG)",
-          "Công suất": "258 mã lực + 23 HP boost điện",
-          "Hộp số & Dẫn động": "9G-Tronic / 4MATIC toàn thời gian",
-          "Đèn pha": "DIGITAL LIGHT phân giải 2.6 triệu pixel",
-          "Màn hình trung tâm": "11.9 inch cảm ứng nghiêng OLED MBUX NTG7",
-          "Âm thanh": "Burmester 3D High-End 15 loa 710W"
-        }
-      },
-      "Audi A6 S-Line TFSI": {
-        segment: "Sedan & SUV Hạng Sang",
-        badgeClass: "badge-luxury",
-        price: "2.780 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1200&q=80",
-        desc: "Sedan hạng sang mang phong cách công nghệ tinh tế đến từ Đức. Khung gầm nhôm nhẹ vững chãi, hệ dẫn động bốn bánh toàn thời gian Quattro lừng danh.",
-        specs: {
-          "Động cơ": "2.0L TFSI MHEV Mild-Hybrid 12V",
-          "Công suất": "245 mã lực / Mô-men xoắn 370 Nm",
-          "Hệ dẫn động": "Quattro thông minh 4 bánh toàn thời gian",
-          "Hộp số": "7 cấp S-tronic ly hợp kép phản hồi tức thì",
-          "Buồng lái số": "Audi Virtual Cockpit Plus kép 10.1 & 8.6 inch",
-          "Hệ thống đèn": "HD Matrix LED với đèn báo rẽ tia năng động"
-        }
-      },
-      "Lexus RX 350 Luxury": {
-        segment: "Sedan & SUV Hạng Sang",
-        badgeClass: "badge-luxury",
-        price: "4.330 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1200&q=80",
-        desc: "Chuẩn mực độ êm ái và tin cậy tuyệt đối của người Nhật. Khoang xe tĩnh lặng tuyệt đối cùng nội thất bọc da Semi-Aniline thượng hạng và gỗ cao cấp Shimamoku.",
-        specs: {
-          "Động cơ": "2.4L Turbo 4-xy lanh thế hệ mới (T24A-FTS)",
-          "Công suất": "275 mã lực / Mô-men xoắn 430 Nm",
-          "Hộp số": "Direct-Shift 8 cấp kết hợp hệ thống AWD điện tử",
-          "Âm thanh": "Mark Levinson 21 loa vòm rạp hát tại gia",
-          "Gói an toàn": "Lexus Safety System+ 3.0 thế hệ mới nhất",
-          "Nội thất": "Ghế da Semi-Aniline chỉnh điện 14 hướng, nhớ 3 vị trí"
-        }
-      },
-      "Porsche 911 Carrera S": {
-        segment: "Siêu Xe Cao Cấp",
-        badgeClass: "badge-supercar",
-        price: "8.210 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=1200&q=80",
-        desc: "Huyền thoại xe thể thao bất tử của mọi thời đại. Trọng tâm cực thấp, động cơ Boxer đặt sau trứ danh cùng khả năng kiểm soát thân xe chính xác đến từng milimet.",
-        specs: {
-          "Động cơ": "3.0L 6-xy lanh Boxer Twin-Turbo",
-          "Công suất": "450 mã lực @ 6,500 rpm / 530 Nm",
-          "Tăng tốc 0-100 km/h": "3.5 giây (với gói Sport Chrono)",
-          "Tốc độ tối đa": "308 km/h",
-          "Hộp số": "PDK 8 cấp ly hợp kép độc quyền Porsche",
-          "Hệ thống lái": "PASM điều khiển giảm chấn điện tử chủ động"
-        }
-      },
-      "Lamborghini Huracán EVO": {
-        segment: "Siêu Xe Cao Cấp",
-        badgeClass: "badge-supercar",
-        price: "16.880 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?auto=format&fit=crop&w=1200&q=80",
-        desc: "Mãnh thú cơ bắp Ý sở hữu khối động cơ V10 hút khí tự nhiên gầm vang kích thích tột độ. Hệ thống kiểm soát động lực xe tích hợp LDVI thông minh.",
-        specs: {
-          "Động cơ": "5.2L V10 Hút khí tự nhiên (Naturally Aspirated)",
-          "Công suất cực đại": "640 mã lực @ 8,000 rpm / 600 Nm",
-          "Gia tốc 0-100 km/h": "2.9 giây | 0-200 km/h trong 9.0s",
-          "Vận tốc tối đa": "Hơn 325 km/h",
-          "Hệ thống lái": "Đánh lái 4 bánh (All-Wheel Steering) & Torque Vectoring",
-          "Bộ phanh": "Đĩa phanh Gốm-Carbon (Carbon Ceramic CCB)"
-        }
-      },
-      "Ferrari F8 Tributo": {
-        segment: "Siêu Xe Cao Cấp",
-        badgeClass: "badge-supercar",
-        price: "19.500 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=1200&q=80",
-        desc: "Tuyệt tác siêu xe tôn vinh cỗ máy V8 mạnh mẽ nhất trong lịch sử Ferrari. Thiết kế khí động học thừa hưởng trực tiếp từ đường đua F1 với cánh gió S-Duct.",
-        specs: {
-          "Động cơ": "3.9L V8 90 độ Twin-Turbo đoạt giải Engine of the Year",
-          "Công suất": "720 mã lực @ 7,000 rpm (185 hp/lít)",
-          "Gia tốc 0-100 km/h": "2.9 giây | 0-200 km/h: 7.8 giây",
-          "Tốc độ tối đa": "340 km/h",
-          "Khí động học": "S-Duct tăng 15% lực ép mặt đường (Downforce)",
-          "Hệ thống hỗ trợ": "Side Slip Angle Control 6.1 (SSC) drift tối thượng"
-        }
-      },
-      "McLaren 720S Spider": {
-        segment: "Siêu Xe Cao Cấp",
-        badgeClass: "badge-supercar",
-        price: "23.800 tỷ VNĐ",
-        image: "https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=1200&q=80",
-        desc: "Siêu phẩm mui trần bằng sợi carbon siêu nhẹ từ Anh Quốc. Mui xếp cứng điện tử đóng mở thần tốc chỉ trong 11 giây ngay cả khi xe đang chạy ở 50 km/h.",
-        specs: {
-          "Động cơ": "4.0L V8 Twin-Turbo M840T",
-          "Công suất": "720 mã lực / 770 Nm mô-men xoắn",
-          "Trọng lượng khô": "Chỉ 1,332 kg (Khung Monocage II-S Carbon)",
-          "Tăng tốc 0-100 km/h": "2.9 giây | 0-200 km/h: 7.9 giây",
-          "Tốc độ tối đa": "341 km/h (Mở mui: 325 km/h)",
-          "Hệ thống treo": "Proactive Chassis Control II thủy lực độc quyền"
-        }
-      }
-    };
-
-    /* === Xử lý Modal Xem Chi Tiết Xe === */
-    const modal = document.getElementById('car-detail-modal');
-    const modalCloseBtn = document.getElementById('modal-close');
-    const modalBackdrop = document.getElementById('modal-backdrop');
-    const modalImg = document.getElementById('modal-img');
-    const modalBadge = document.getElementById('modal-badge');
-    const modalTitle = document.getElementById('modal-title');
-    const modalPrice = document.getElementById('modal-price');
-    const modalDesc = document.getElementById('modal-desc');
-    const modalSpecsBody = document.getElementById('modal-specs-body');
-    const modalBookBtn = document.getElementById('modal-book-btn');
-
-    let currentSelectedCar = '';
-
-    function openCarDetail(carName) {
-      const data = CAR_DATABASE[carName];
-      if (!data) return;
-
-      currentSelectedCar = carName;
-      modalImg.src = data.image;
-      modalImg.alt = carName;
-      modalBadge.className = 'modal-media__badge ' + data.badgeClass;
-      modalBadge.textContent = data.segment;
-      modalTitle.textContent = carName;
-      modalPrice.innerHTML = '<i class="fa-solid fa-tag"></i> ' + data.price;
-      modalDesc.textContent = data.desc;
-
-      // Đổ thông số kỹ thuật
-      modalSpecsBody.innerHTML = '';
-      for (const [key, value] of Object.entries(data.specs)) {
-        const row = document.createElement('tr');
-        row.innerHTML = `<td>${key}</td><td><strong>${value}</strong></td>`;
-        modalSpecsBody.appendChild(row);
-      }
-
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeCarDetail() {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    modalCloseBtn.addEventListener('click', closeCarDetail);
-    modalBackdrop.addEventListener('click', closeCarDetail);
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeCarDetail();
-      }
-    });
-
-    // Bắt sự kiện click các nút "Chi tiết"
-    document.querySelectorAll('.btn-detail').forEach(btn => {
-      btn.addEventListener('click', () => {
-        openCarDetail(btn.dataset.car);
-      });
-    });
-
-    // Nút lái thử trong modal
-    modalBookBtn.addEventListener('click', () => {
-      closeCarDetail();
-      if (currentSelectedCar) {
-        for (const opt of carSelect.options) {
-          if (opt.value === currentSelectedCar) {
-            opt.selected = true;
-            break;
-          }
-        }
-        document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-
-    /* === Bộ lọc Phân khúc Xe === */
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const carCards   = document.querySelectorAll('.car-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Cập nhật nút active
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-
-        carCards.forEach(card => {
-          if (filter === 'all' || card.dataset.segment === filter) {
-            card.style.display = '';
-            card.removeAttribute('hidden');
-          } else {
-            card.style.display = 'none';
-            card.setAttribute('hidden', '');
-          }
-        });
-
-        // Refresh AOS sau khi thay đổi DOM hiển thị
-        setTimeout(() => AOS.refresh(), 100);
-      });
-    });
-
-    /* === Nút "Đặt lịch lái thử" → tự động điền tên xe vào form === */
-    const bookBtns  = document.querySelectorAll('.btn-book');
-    const carSelect = document.getElementById('car-select');
-
-    bookBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const carName = btn.dataset.car;
-
-        // Chọn đúng option trong select
-        for (const opt of carSelect.options) {
-          if (opt.value === carName) {
-            opt.selected = true;
-            break;
-          }
-        }
-
-        // Cuộn tới form
-        document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    /* === Form Validation đơn giản === */
-    const bookingForm = document.getElementById('booking-form');
-    bookingForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const fullname = document.getElementById('fullname').value.trim();
-      const phone    = document.getElementById('phone').value.trim();
-      const car      = carSelect.value;
-
-      if (!fullname || !phone || !car) {
-        alert('Vui lòng điền đầy đủ: Họ tên, Số điện thoại và Mẫu xe quan tâm.');
-        return;
-      }
-
-      alert(`Cảm ơn ${fullname}!\n\nYêu cầu lái thử xe "${car}" đã được ghi nhận.\nĐội ngũ AutoPrestige sẽ liên hệ bạn qua SĐT: ${phone} trong 30 phút.`);
-      bookingForm.reset();
-    });
-  </script>
-
 </body>
 </html>

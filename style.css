@@ -1,5 +1,5 @@
 /* =========================================================
-   AutoPrestige Vietnam — style.css
+   AutoPrestige Vietnam — style.css (PURE HTML & CSS)
    Sinh viên: Nguyễn Tấn Điền | MSSV: 125000260
    Khoa CNTT — Trường Đại học Lạc Hồng
    ========================================================= */
@@ -27,8 +27,8 @@
   --gradient-gold: linear-gradient(135deg, var(--gold-color), #ffb347);
 
   /* Font chữ */
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -51,7 +51,7 @@
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.45);
   --shadow-glow: 0 0 20px rgba(233, 69, 96, 0.3);
 
-  /* Transition — tách riêng để không xung đột với AOS */
+  /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-base: 0.3s ease;
   --transition-slow: 0.5s ease;
@@ -139,6 +139,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid transparent;
   border-radius: var(--radius-md);
   cursor: pointer;
+  text-decoration: none;
   transition: background var(--transition-base),
               color var(--transition-base),
               border-color var(--transition-base),
@@ -182,24 +183,18 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-/* === HEADER & NAV === */
+/* === HEADER & NAV (PURE CSS CHECKBOX HACK) === */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(15, 15, 26, 0.85);
+  background: rgba(15, 15, 26, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
-  transition: background var(--transition-base),
-              box-shadow var(--transition-base);
-}
-
-.site-header.scrolled {
-  background: rgba(15, 15, 26, 0.97);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .main-nav {
@@ -207,6 +202,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   height: 72px;
+  position: relative;
 }
 
 .logo {
@@ -253,6 +249,11 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(255, 255, 255, 0.06);
 }
 
+/* Checkbox Toggle cho Mobile không cần JS */
+.nav-toggle-checkbox {
+  display: none;
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -261,9 +262,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.5rem;
   cursor: pointer;
   padding: var(--space-sm);
+  user-select: none;
 }
 
-/* === HERO === */
+/* === HERO SECTION WITH BACKGROUND VIDEO === */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -294,16 +296,28 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(10, 10, 26, 0.7) 0%,
-    rgba(10, 10, 26, 0.5) 40%,
-    rgba(10, 10, 26, 0.85) 100%
+    rgba(10, 10, 26, 0.72) 0%,
+    rgba(10, 10, 26, 0.52) 40%,
+    rgba(10, 10, 26, 0.90) 100%
   );
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 750px;
+  max-width: 780px;
+  animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-badge {
@@ -331,7 +345,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.1rem;
   color: var(--text-secondary);
   margin-bottom: var(--space-xl);
-  max-width: 600px;
+  max-width: 620px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -380,8 +394,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
-/* === FILTER BAR === */
-.filter-bar {
+/* === BỘ LỌC PHÂN KHÚC PURE CSS (RADIO TABS) === */
+.filter-controls {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -389,7 +403,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--space-xl);
 }
 
-.filter-btn {
+.filter-radio {
+  display: none;
+}
+
+.filter-label {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
@@ -402,22 +420,40 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
+  user-select: none;
   transition: background var(--transition-fast),
               color var(--transition-fast),
               border-color var(--transition-fast),
               box-shadow var(--transition-fast);
 }
 
-.filter-btn:hover {
+.filter-label:hover {
   color: var(--text-primary);
   border-color: var(--accent-color);
 }
 
-.filter-btn.active {
+/* Trạng thái Radio được chọn bằng Pure CSS */
+#filter-all:checked ~ label[for="filter-all"],
+#filter-family:checked ~ label[for="filter-family"],
+#filter-luxury:checked ~ label[for="filter-luxury"],
+#filter-supercar:checked ~ label[for="filter-supercar"] {
   background: var(--gradient-accent);
   color: #fff;
   border-color: transparent;
   box-shadow: var(--shadow-glow);
+}
+
+/* Logic ẩn hiện xe bằng Pure CSS Sibling Selector */
+.showroom:has(#filter-family:checked) .car-card:not([data-segment="family"]) {
+  display: none;
+}
+
+.showroom:has(#filter-luxury:checked) .car-card:not([data-segment="luxury"]) {
+  display: none;
+}
+
+.showroom:has(#filter-supercar:checked) .car-card:not([data-segment="supercar"]) {
+  display: none;
 }
 
 /* === CAR GRID & CARDS === */
@@ -436,6 +472,8 @@ h1, h2, h3, h4, h5, h6 {
               box-shadow var(--transition-base),
               border-color var(--transition-base);
   outline: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .car-card:hover,
@@ -478,12 +516,15 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.04em;
 }
 
-.badge-family   { background: rgba(46, 204, 113, 0.85); }
-.badge-luxury   { background: rgba(52, 152, 219, 0.85); }
-.badge-supercar { background: rgba(233, 69, 96, 0.9); }
+.badge-family   { background: rgba(46, 204, 113, 0.88); }
+.badge-luxury   { background: rgba(52, 152, 219, 0.88); }
+.badge-supercar { background: rgba(233, 69, 96, 0.92); }
 
 .car-card__body {
   padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .car-card__name {
@@ -522,17 +563,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.8rem;
 }
 
-.car-card .btn-book {
-  width: 100%;
-  justify-content: center;
-  padding: 0.65rem 1rem;
-  font-size: 0.88rem;
-}
-
 .car-card__actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-sm);
+  margin-top: auto;
 }
 
 .car-card__actions .btn {
@@ -540,7 +575,6 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   padding: 0.6rem 0.5rem;
   font-size: 0.82rem;
-  letter-spacing: -0.01em;
 }
 
 .btn-detail {
@@ -555,8 +589,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 
-/* === MODAL CHI TIẾT SẢN PHẨM === */
-.modal {
+/* === PURE CSS MODALS (:target) === */
+.modal-target {
   position: fixed;
   inset: 0;
   z-index: 2000;
@@ -566,15 +600,18 @@ h1, h2, h3, h4, h5, h6 {
   padding: var(--space-md);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity var(--transition-base), visibility var(--transition-base);
 }
 
-.modal.active {
+/* Khi URL có hash trùng với ID modal, :target được kích hoạt bằng Pure CSS! */
+.modal-target:target {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
-.modal-backdrop {
+.modal-target__backdrop {
   position: absolute;
   inset: 0;
   background: rgba(8, 8, 16, 0.85);
@@ -582,7 +619,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-backdrop-filter: blur(8px);
 }
 
-.modal-container {
+.modal-target__container {
   position: relative;
   z-index: 1;
   background: var(--card-bg);
@@ -593,21 +630,15 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 90vh;
   overflow-y: auto;
   box-shadow: var(--shadow-lg);
-  animation: modalSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes modalSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+.modal-target:target .modal-target__container {
+  transform: translateY(0);
 }
 
-.modal-close {
+.modal-target__close {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -617,7 +648,9 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0, 0, 0, 0.6);
   border: 1px solid var(--border-color);
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+  line-height: 1;
+  text-decoration: none;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -626,8 +659,9 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 10;
 }
 
-.modal-close:hover {
+.modal-target__close:hover {
   background: var(--accent-color);
+  color: #fff;
   transform: rotate(90deg);
 }
 
@@ -726,22 +760,6 @@ h1, h2, h3, h4, h5, h6 {
 .modal-actions .btn {
   flex: 1;
   justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .modal-content-grid {
-    grid-template-columns: 1fr;
-  }
-  .modal-media img {
-    max-height: 240px;
-    min-height: 200px;
-  }
-  .modal-info {
-    padding: var(--space-lg);
-  }
-  .car-card__actions {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* === SERVICES === */
@@ -1105,10 +1123,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================================
-   RESPONSIVE — Dưới 920px
+   RESPONSIVE — Dưới 920px (Pure CSS, NO JS)
    ========================================================= */
 @media (max-width: 920px) {
-  /* Nav */
+  /* Nav Hamburger bằng Pure CSS checkbox */
   .nav-toggle {
     display: block;
   }
@@ -1120,12 +1138,13 @@ h1, h2, h3, h4, h5, h6 {
     top: 72px;
     left: 0;
     right: 0;
-    background: rgba(15, 15, 26, 0.97);
+    background: rgba(15, 15, 26, 0.98);
     border-bottom: 1px solid var(--border-color);
     padding: var(--space-md) 0;
   }
 
-  .nav-links.open {
+  /* Khi checkbox được tick thì mở nav links */
+  .nav-toggle-checkbox:checked ~ .nav-links {
     display: flex;
   }
 
@@ -1156,6 +1175,22 @@ h1, h2, h3, h4, h5, h6 {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-media img {
+    max-height: 240px;
+    min-height: 200px;
+  }
+  .modal-info {
+    padding: var(--space-lg);
+  }
+  .car-card__actions {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1193,11 +1228,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   /* Filter */
-  .filter-bar {
+  .filter-controls {
     gap: var(--space-xs);
   }
 
-  .filter-btn {
+  .filter-label {
     padding: 0.45rem 0.9rem;
     font-size: 0.82rem;
   }
