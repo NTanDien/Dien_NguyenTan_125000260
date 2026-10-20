@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoPrestige Vietnam — Quảng bá &amp; Trải nghiệm Xe Hơi Đa Phân Khúc</title>
+  <meta name="description" content="AutoPrestige Vietnam — Nền tảng Quảng bá & Trải nghiệm Xe Hơi Đa Phân Khúc: Hạng Vừa, Hạng Sang đến Siêu Xe Cao Cấp." />
+  <meta name="author" content="Nguyễn Tấn Điền — MSSV: 125000260" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Animate.css v4.1.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- AOS v2.3.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER + NAV ============ -->
+  <header class="site-header" id="site-header">
+    <nav class="main-nav container" aria-label="Điều hướng chính">
+      <a href="#" class="logo" aria-label="AutoPrestige Vietnam — Trang chủ">
+        <i class="fa-solid fa-car-side"></i>
+        <span>Auto<strong>Prestige</strong></span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Mở menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#hero"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+        <li><a href="#showroom"><i class="fa-solid fa-car"></i> Showroom</a></li>
+        <li><a href="#services"><i class="fa-solid fa-concierge-bell"></i> Dịch vụ</a></li>
+        <li><a href="#compare"><i class="fa-solid fa-scale-balanced"></i> So sánh</a></li>
+        <li><a href="#booking"><i class="fa-solid fa-calendar-check"></i> Đặt lịch</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero" id="hero">
+      <figure class="hero-bg">
+        <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80">
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-sports-car-driving-on-a-highway-at-dusk-41235-large.mp4" type="video/mp4" />
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1920&q=80" alt="Siêu xe thể thao trên đường cao tốc" loading="eager" />
+        </video>
+      </figure>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container animate__animated animate__fadeInUp">
+        <span class="hero-badge animate__animated animate__bounceIn animate__delay-1s">
+          <i class="fa-solid fa-star"></i> Đại lý Ủy quyền Chính hãng
+        </span>
+        <h1 class="animate__animated animate__fadeInUp animate__delay-1s">
+          Trải nghiệm Đẳng cấp<br /><span class="text-gradient">Mọi Phân Khúc Xe Hơi</span>
+        </h1>
+        <p class="hero-desc animate__animated animate__fadeInUp animate__delay-2s">
+          Từ Sedan gia đình tiện nghi, SUV hạng sang đến Siêu xe Cao cấp — AutoPrestige Vietnam đồng hành cùng bạn trên mọi hành trình.
+        </p>
+        <div class="hero-cta animate__animated animate__fadeInUp animate__delay-2s">
+          <a href="#showroom" class="btn btn-primary"><i class="fa-solid fa-eye"></i> Khám phá Showroom</a>
+          <a href="#booking" class="btn btn-outline"><i class="fa-solid fa-calendar-plus"></i> Đặt lịch Lái thử</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SHOWROOM SECTION ============ -->
+    <section class="showroom" id="showroom">
+      <div class="container">
+        <header class="section-header" data-aos="fade-up">
+          <span class="section-tag"><i class="fa-solid fa-warehouse"></i> Showroom</span>
+          <h2>Bộ sưu tập Xe nổi bật</h2>
+          <p>Khám phá đa dạng mẫu xe từ phân khúc phổ thông đến siêu sang — tất cả trong một nền tảng duy nhất.</p>
+        </header>
+
+        <!-- Bộ lọc phân khúc -->
+        <nav class="filter-bar" aria-label="Lọc phân khúc xe" data-aos="fade-up" data-aos-delay="100">
+          <button class="filter-btn active" data-filter="all">
+            <i class="fa-solid fa-border-all"></i> Tất cả
+          </button>
+          <button class="filter-btn" data-filter="family">
+            <i class="fa-solid fa-people-roof"></i> Hạng Vừa &amp; Gia Đình
+          </button>
+          <button class="filter-btn" data-filter="luxury">
+            <i class="fa-solid fa-gem"></i> Sedan &amp; SUV Hạng Sang
+          </button>
+          <button class="filter-btn" data-filter="supercar">
+            <i class="fa-solid fa-jet-fighter"></i> Siêu Xe Cao Cấp
+          </button>
+        </nav>
+
+        <!-- Lưới xe -->
+        <div class="car-grid" id="car-grid">
+
+          <!-- Xe 1: Hạng Vừa & Gia Đình -->
+          <article class="car-card" tabindex="0" data-segment="family" data-aos="fade-up" data-aos-delay="100">
+            <figure class="car-card__image">
+              <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=80" alt="Toyota Camry 2.5Q 2026" loading="lazy" />
+              <span class="car-card__badge badge-family"><i class="fa-solid fa-people-roof"></i> Gia Đình</span>
+            </figure>
+            <div class="car-card__body">
+              <h3 class="car-card__name">Toyota Camry 2.5Q</h3>
+              <figcaption class="car-card__price">
+                <i class="fa-solid fa-tag"></i> 1.149 tỷ VNĐ
+              </figcaption>
+              <ul class="car-card__specs">
+                <li><i class="fa-solid fa-gas-pump"></i> 2.5L Hybrid</li>
+                <li><i class="fa-solid fa-gauge-high"></i> 209 mã lực</li>
+                <li><i class="fa-solid fa-gears"></i> CVT 8 cấp</li>
+              </ul>
+              <button class="btn btn-primary btn-book" data-car="Toyota Camry 2.5Q" type="button">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử
+              </button>
+            </div>
+          </article>
+
+          <!-- Xe 2: Hạng Vừa & Gia Đình -->
+          <article class="car-card" tabindex="0" data-segment="family" data-aos="fade-up" data-aos-delay="200">
+            <figure class="car-card__image">
+              <img src="https://images.unsplash.com/photo-1606611013004-1a462aa08a79?auto=format&fit=crop&w=800&q=80" alt="Mazda CX-5 2.0 Premium 2026" loading="lazy" />
+              <span class="car-card__badge badge-family"><i class="fa-solid fa-people-roof"></i> Gia Đình</span>
+            </figure>
+            <div class="car-card__body">
+              <h3 class="car-card__name">Mazda CX-5 Premium</h3>
+              <figcaption class="car-card__price">
+                <i class="fa-solid fa-tag"></i> 929 triệu VNĐ
+              </figcaption>
+              <ul class="car-card__specs">
+                <li><i class="fa-solid fa-gas-pump"></i> 2.0L SkyActiv</li>
+                <li><i class="fa-solid fa-gauge-high"></i> 154 mã lực</li>
+                <li><i class="fa-solid fa-gears"></i> AT 6 cấp</li>
+              </ul>
+              <button class="btn btn-primary btn-book" data-car="Mazda CX-5 Premium" type="button">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử
+              </button>
+            </div>
+          </article>
+
+          <!-- Xe 3: Sedan & SUV Hạng Sang -->
+          <article class="car-card" tabindex="0" data-segment="luxury" data-aos="fade-up" data-aos-delay="100">
+            <figure class="car-card__image">
+              <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="BMW 5 Series 530i M Sport 2026" loading="lazy" />
+              <span class="car-card__badge badge-luxury"><i class="fa-solid fa-gem"></i> Hạng Sang</span>
+            </figure>
+            <div class="car-card__body">
+              <h3 class="car-card__name">BMW 530i M Sport</h3>
+              <figcaption class="car-card__price">
+                <i class="fa-solid fa-tag"></i> 3.199 tỷ VNĐ
+              </figcaption>
+              <ul class="car-card__specs">
+                <li><i class="fa-solid fa-gas-pump"></i> 2.0L TwinTurbo</li>
+                <li><i class="fa-solid fa-gauge-high"></i> 252 mã lực</li>
+                <li><i class="fa-solid fa-gears"></i> ZF 8AT</li>
+              </ul>
+              <button class="btn btn-primary btn-book" data-car="BMW 530i M Sport" type="button">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử
+              </button>
+            </div>
+          </article>
+
+          <!-- Xe 4: Sedan & SUV Hạng Sang -->
+          <article class="car-card" tabindex="0" data-segment="luxury" data-aos="fade-up" data-aos-delay="200">
+            <figure class="car-card__image">
+              <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz GLC 300 AMG 2026" loading="lazy" />
+              <span class="car-card__badge badge-luxury"><i class="fa-solid fa-gem"></i> Hạng Sang</span>
+            </figure>
+            <div class="car-card__body">
+              <h3 class="car-card__name">Mercedes GLC 300 AMG</h3>
+              <figcaption class="car-card__price">
+                <i class="fa-solid fa-tag"></i> 2.599 tỷ VNĐ
+              </figcaption>
+              <ul class="car-card__specs">
+                <li><i class="fa-solid fa-gas-pump"></i> 2.0L Turbo</li>
+                <li><i class="fa-solid fa-gauge-high"></i> 258 mã lực</li>
+                <li><i class="fa-solid fa-gears"></i> 9G-Tronic</li>
+              </ul>
+              <button class="btn btn-primary btn-book" data-car="Mercedes GLC 300 AMG" type="button">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử
+              </button>
+            </div>
+          </article>
+
+          <!-- Xe 5: Siêu Xe Cao Cấp -->
+          <article class="car-card" tabindex="0" data-segment="supercar" data-aos="fade-up" data-aos-delay="100">
+            <figure class="car-card__image">
+              <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=800&q=80" alt="Porsche 911 Carrera S 2026" loading="lazy" />
+              <span class="car-card__badge badge-supercar"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe</span>
+            </figure>
+            <div class="car-card__body">
+              <h3 class="car-card__name">Porsche 911 Carrera S</h3>
+              <figcaption class="car-card__price">
+                <i class="fa-solid fa-tag"></i> 8.210 tỷ VNĐ
+              </figcaption>
+              <ul class="car-card__specs">
+                <li><i class="fa-solid fa-gas-pump"></i> 3.0L Twin-Turbo</li>
+                <li><i class="fa-solid fa-gauge-high"></i> 450 mã lực</li>
+                <li><i class="fa-solid fa-gears"></i> PDK 8 cấp</li>
+              </ul>
+              <button class="btn btn-primary btn-book" data-car="Porsche 911 Carrera S" type="button">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử
+              </button>
+            </div>
+          </article>
+
+          <!-- Xe 6: Siêu Xe Cao Cấp -->
+          <article class="car-card" tabindex="0" data-segment="supercar" data-aos="fade-up" data-aos-delay="200">
+            <figure class="car-card__image">
+              <img src="https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?auto=format&fit=crop&w=800&q=80" alt="Lamborghini Huracán EVO 2026" loading="lazy" />
+              <span class="car-card__badge badge-supercar"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe</span>
+            </figure>
+            <div class="car-card__body">
+              <h3 class="car-card__name">Lamborghini Huracán EVO</h3>
+              <figcaption class="car-card__price">
+                <i class="fa-solid fa-tag"></i> 16.880 tỷ VNĐ
+              </figcaption>
+              <ul class="car-card__specs">
+                <li><i class="fa-solid fa-gas-pump"></i> 5.2L V10 NA</li>
+                <li><i class="fa-solid fa-gauge-high"></i> 640 mã lực</li>
+                <li><i class="fa-solid fa-gears"></i> LDF 7 cấp</li>
+              </ul>
+              <button class="btn btn-primary btn-book" data-car="Lamborghini Huracán EVO" type="button">
+                <i class="fa-solid fa-calendar-check"></i> Đặt lịch lái thử
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DỊCH VỤ & QUYỀN LỢI ============ -->
+    <section class="services" id="services">
+      <div class="container">
+        <header class="section-header" data-aos="fade-up">
+          <span class="section-tag"><i class="fa-solid fa-hand-holding-heart"></i> Quyền lợi</span>
+          <h2>Dịch vụ &amp; Quyền lợi Khách hàng</h2>
+          <p>AutoPrestige Vietnam cam kết mang đến trải nghiệm sở hữu xe toàn diện và an tâm nhất.</p>
+        </header>
+
+        <div class="services-grid">
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card__icon">
+              <i class="fa-solid fa-percent"></i>
+            </div>
+            <h3>Trả góp chỉ từ 5.9%/năm</h3>
+            <p>Hỗ trợ vay tối đa 80% giá trị xe, thủ tục nhanh gọn chỉ trong 24 giờ. Hợp tác cùng 12 ngân hàng hàng đầu.</p>
+          </article>
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card__icon">
+              <i class="fa-solid fa-arrow-right-arrow-left"></i>
+            </div>
+            <h3>Thu cũ — Đổi mới</h3>
+            <p>Định giá xe cũ minh bạch qua AI, hỗ trợ bù trừ linh hoạt khi nâng cấp lên xe mới bất kỳ phân khúc nào.</p>
+          </article>
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card__icon">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <h3>Bảo hành 5 năm</h3>
+            <p>Chế độ bảo hành chính hãng lên đến 5 năm hoặc 150.000 km, áp dụng toàn quốc tại hơn 50 đại lý.</p>
+          </article>
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card__icon">
+              <i class="fa-solid fa-truck-medical"></i>
+            </div>
+            <h3>Cứu hộ 24/7</h3>
+            <p>Đội ngũ cứu hộ chuyên nghiệp túc trực 24/7 trên toàn lãnh thổ Việt Nam, có mặt trong 60 phút.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BẢNG SO SÁNH TƯ VẤN ============ -->
+    <section class="compare" id="compare">
+      <div class="container">
+        <header class="section-header" data-aos="fade-up">
+          <span class="section-tag"><i class="fa-solid fa-scale-balanced"></i> So sánh</span>
+          <h2>Tư vấn phân khúc phù hợp với bạn</h2>
+          <p>So sánh nhanh ba phân khúc xe để tìm lựa chọn phù hợp nhất với nhu cầu và ngân sách của bạn.</p>
+        </header>
+
+        <div class="compare-table-wrap" data-aos="fade-up" data-aos-delay="100">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th scope="col"><i class="fa-solid fa-clipboard-list"></i> Tiêu chí</th>
+                <th scope="col"><i class="fa-solid fa-people-roof"></i> Hạng Vừa &amp; Gia Đình</th>
+                <th scope="col"><i class="fa-solid fa-gem"></i> Sedan &amp; SUV Hạng Sang</th>
+                <th scope="col"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe Cao Cấp</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Khoảng giá</strong></td>
+                <td>500 triệu — 1.5 tỷ</td>
+                <td>2 tỷ — 5 tỷ</td>
+                <td>8 tỷ — 30+ tỷ</td>
+              </tr>
+              <tr>
+                <td><strong>Đối tượng</strong></td>
+                <td>Gia đình, Doanh nhân trẻ</td>
+                <td>Doanh nhân, Giám đốc</td>
+                <td>Nhà sưu tầm, Giới thượng lưu</td>
+              </tr>
+              <tr>
+                <td><strong>Động cơ phổ biến</strong></td>
+                <td>1.5L — 2.5L (Xăng/Hybrid)</td>
+                <td>2.0L — 3.0L (Turbo)</td>
+                <td>3.8L — 6.5L (V8/V10/V12)</td>
+              </tr>
+              <tr>
+                <td><strong>Công nghệ nổi bật</strong></td>
+                <td>ADAS cơ bản, Apple CarPlay</td>
+                <td>Lái bán tự động L2+, HUD</td>
+                <td>Khí động học chủ động, Launch Control</td>
+              </tr>
+              <tr>
+                <td><strong>Bảo hiểm/năm (ước tính)</strong></td>
+                <td>8 — 15 triệu</td>
+                <td>30 — 60 triệu</td>
+                <td>150 — 500+ triệu</td>
+              </tr>
+              <tr>
+                <td><strong>Ưu đãi AutoPrestige</strong></td>
+                <td>Trả góp 5.9%, Phụ kiện miễn phí</td>
+                <td>Bảo hành mở rộng, VIP Lounge</td>
+                <td>Concierge riêng, Track Day độc quyền</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <aside class="compare-tip" data-aos="fade-up" data-aos-delay="200">
+          <i class="fa-solid fa-lightbulb"></i>
+          <p><strong>Mẹo từ chuyên gia:</strong> Nếu bạn lần đầu mua xe, hãy bắt đầu từ phân khúc <em>Hạng Vừa & Gia Đình</em> — chi phí vận hành thấp, giá trị bán lại ổn định, và công nghệ an toàn đã rất đầy đủ.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ FORM ĐẶT LỊCH LÁI THỬ ============ -->
+    <section class="booking" id="booking">
+      <div class="container">
+        <header class="section-header" data-aos="fade-up">
+          <span class="section-tag"><i class="fa-solid fa-calendar-check"></i> Đặt lịch</span>
+          <h2>Đặt lịch Lái thử &amp; Nhận Báo giá Lăn bánh</h2>
+          <p>Điền thông tin bên dưới, đội ngũ tư vấn AutoPrestige sẽ liên hệ bạn trong vòng 30 phút.</p>
+        </header>
+
+        <form class="booking-form" id="booking-form" data-aos="fade-up" data-aos-delay="100" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="fullname"><i class="fa-solid fa-user"></i> Họ và tên <span class="required">*</span></label>
+              <input type="text" id="fullname" name="fullname" placeholder="Nguyễn Văn A" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone"><i class="fa-solid fa-phone"></i> Số điện thoại <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" placeholder="0912 345 678" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email"><i class="fa-solid fa-envelope"></i> Email</label>
+              <input type="email" id="email" name="email" placeholder="email@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="car-select"><i class="fa-solid fa-car"></i> Mẫu xe quan tâm <span class="required">*</span></label>
+              <select id="car-select" name="car-select" required>
+                <option value="">— Chọn mẫu xe —</option>
+                <option value="Toyota Camry 2.5Q">Toyota Camry 2.5Q</option>
+                <option value="Mazda CX-5 Premium">Mazda CX-5 Premium</option>
+                <option value="BMW 530i M Sport">BMW 530i M Sport</option>
+                <option value="Mercedes GLC 300 AMG">Mercedes GLC 300 AMG</option>
+                <option value="Porsche 911 Carrera S">Porsche 911 Carrera S</option>
+                <option value="Lamborghini Huracán EVO">Lamborghini Huracán EVO</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="date"><i class="fa-solid fa-calendar-days"></i> Ngày lái thử</label>
+              <input type="date" id="date" name="date" />
+            </div>
+
+            <div class="form-group">
+              <label for="message"><i class="fa-solid fa-comment-dots"></i> Ghi chú thêm</label>
+              <textarea id="message" name="message" rows="3" placeholder="VD: Tôi muốn nhận báo giá lăn bánh tại TP.HCM..."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit">
+            <i class="fa-solid fa-paper-plane"></i> Gửi yêu cầu
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-car-side"></i>
+          <span>Auto<strong>Prestige</strong></span>
+        </a>
+        <p>Nền tảng Quảng bá &amp; Trải nghiệm Xe Hơi Đa Phân Khúc hàng đầu Việt Nam.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <nav class="footer-links" aria-label="Liên kết nhanh">
+        <h4>Liên kết nhanh</h4>
+        <ul role="list">
+          <li><a href="#showroom">Showroom</a></li>
+          <li><a href="#services">Dịch vụ</a></li>
+          <li><a href="#compare">So sánh xe</a></li>
+          <li><a href="#booking">Đặt lịch lái thử</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h4>Liên hệ</h4>
+        <address>
+          <p><i class="fa-solid fa-location-dot"></i> Số 10 Huỳnh Văn Nghệ, P. Bửu Long, TP. Biên Hòa, Đồng Nai</p>
+          <p><i class="fa-solid fa-phone"></i> <a href="tel:02513953373">0251 395 3373</a></p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:info@autoprestige.vn">info@autoprestige.vn</a></p>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 AutoPrestige Vietnam — Bài kiểm tra Giữa kỳ Thiết kế Web.</p>
+        <p>Sinh viên thực hiện: <strong>Nguyễn Tấn Điền</strong> — MSSV: <strong>125000260</strong> — Khoa CNTT, Trường Đại học Lạc Hồng.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <!-- AOS v2.3.1 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+
+  <script>
+    /* === AOS Init === */
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 60
+    });
+
+    /* === Mobile Nav Toggle === */
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks  = document.getElementById('nav-links');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.querySelector('i').className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    });
+
+    // Đóng menu khi click link
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.querySelector('i').className = 'fa-solid fa-bars';
+      });
+    });
+
+    /* === Header Scroll Shadow === */
+    const siteHeader = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    /* === Bộ lọc Phân khúc Xe === */
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const carCards   = document.querySelectorAll('.car-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Cập nhật nút active
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        carCards.forEach(card => {
+          if (filter === 'all' || card.dataset.segment === filter) {
+            card.style.display = '';
+            card.removeAttribute('hidden');
+          } else {
+            card.style.display = 'none';
+            card.setAttribute('hidden', '');
+          }
+        });
+
+        // Refresh AOS sau khi thay đổi DOM hiển thị
+        setTimeout(() => AOS.refresh(), 100);
+      });
+    });
+
+    /* === Nút "Đặt lịch lái thử" → tự động điền tên xe vào form === */
+    const bookBtns  = document.querySelectorAll('.btn-book');
+    const carSelect = document.getElementById('car-select');
+
+    bookBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const carName = btn.dataset.car;
+
+        // Chọn đúng option trong select
+        for (const opt of carSelect.options) {
+          if (opt.value === carName) {
+            opt.selected = true;
+            break;
+          }
+        }
+
+        // Cuộn tới form
+        document.getElementById('booking').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    /* === Form Validation đơn giản === */
+    const bookingForm = document.getElementById('booking-form');
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const fullname = document.getElementById('fullname').value.trim();
+      const phone    = document.getElementById('phone').value.trim();
+      const car      = carSelect.value;
+
+      if (!fullname || !phone || !car) {
+        alert('Vui lòng điền đầy đủ: Họ tên, Số điện thoại và Mẫu xe quan tâm.');
+        return;
+      }
+
+      alert(`Cảm ơn ${fullname}!\n\nYêu cầu lái thử xe "${car}" đã được ghi nhận.\nĐội ngũ AutoPrestige sẽ liên hệ bạn qua SĐT: ${phone} trong 30 phút.`);
+      bookingForm.reset();
+    });
+  </script>
+
+</body>
+</html>
