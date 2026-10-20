@@ -529,6 +529,221 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.88rem;
 }
 
+.car-card__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.car-card__actions .btn {
+  width: 100%;
+  justify-content: center;
+  padding: 0.6rem 0.5rem;
+  font-size: 0.82rem;
+  letter-spacing: -0.01em;
+}
+
+.btn-detail {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.btn-detail:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--text-primary);
+  color: #fff;
+}
+
+/* === MODAL CHI TIẾT SẢN PHẨM === */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 8, 16, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-container {
+  position: relative;
+  z-index: 1;
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  animation: modalSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid var(--border-color);
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  z-index: 10;
+}
+
+.modal-close:hover {
+  background: var(--accent-color);
+  transform: rotate(90deg);
+}
+
+.modal-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+}
+
+.modal-media {
+  position: relative;
+  background: #000;
+}
+
+.modal-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+}
+
+.modal-media__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-lg);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.modal-info {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header-info {
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--space-md);
+}
+
+.modal-title {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.modal-price {
+  font-size: 1.3rem;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
+.modal-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: var(--space-lg);
+}
+
+.modal-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--space-xl);
+  font-size: 0.88rem;
+}
+
+.modal-specs-table tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-specs-table td {
+  padding: 0.55rem 0;
+  color: var(--text-secondary);
+}
+
+.modal-specs-table td:first-child {
+  color: var(--text-muted);
+  width: 42%;
+}
+
+.modal-specs-table td strong {
+  color: var(--text-primary);
+}
+
+.modal-actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: auto;
+}
+
+.modal-actions .btn {
+  flex: 1;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .modal-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-media img {
+    max-height: 240px;
+    min-height: 200px;
+  }
+  .modal-info {
+    padding: var(--space-lg);
+  }
+  .car-card__actions {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* === SERVICES === */
 .services {
   background: var(--primary-color);
