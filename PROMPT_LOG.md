@@ -1,93 +1,60 @@
-# 📝 PROMPT LOG — Bài kiểm tra Giữa kỳ môn Thiết kế Web
+# NHẬT KÝ PROMPT ENGINEERING (VIBE CODING LOG)
+- **Họ và tên:** Nguyễn Tấn Điền
+- **MSSV:** 125000260
+- **Tên đề tài Website:** AutoPrestige Vietnam — Nền tảng Quảng bá & Trải nghiệm Xe Hơi Đa Phân Khúc (Từ Hạng Vừa, Hạng Sang đến Siêu Xe Cao Cấp)
+- **Công cụ AI đã sử dụng:** Google Antigravity, Gemini, Claude
 
----
+## 1. Yêu cầu ban đầu (System/Initial Prompt)
+> "Hãy đóng vai trò là một Senior Front-end Developer và UI/UX Designer hàng đầu. Xây dựng một website hoàn chỉnh cho đề tài **AutoPrestige Vietnam** — Nền tảng Quảng bá & Trải nghiệm Xe Hơi Đa Phân Khúc (Hạng Vừa & Gia Đình, Sedan & SUV Hạng Sang, Siêu Xe Cao Cấp).
+> 
+> Yêu cầu kỹ thuật bắt buộc:
+> 1. Chuẩn Semantic HTML5: Sử dụng đúng tối thiểu 5 thành phần `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<figure>`, `<figcaption>`, `<aside>`, `<footer>`. Không lạm dụng thẻ `<div>`.
+> 2. CSS Variables (:root): Quản lý tập trung toàn bộ màu sắc, typography, spacing, radius và shadow. Sử dụng Flexbox & CSS Grid cho bố cục, có responsive cơ bản dưới 920px và mobile.
+> 3. Tương tác & Hiệu ứng thư viện:
+>    - Tích hợp CDN Animate.css (v4.1.1) cho các phần tử chính như tiêu đề, Hero Section, CTA buttons.
+>    - Tích hợp CDN AOS (Animate On Scroll v2.3.1) cho hiệu ứng xuất hiện khi cuộn trang sinh động.
+>    - Tự viết hiệu ứng `:hover`, `:focus` bằng CSS cho nút bấm, card xe (`.car-card`), card dịch vụ và ô input.
+> 4. Tính năng Showroom: Hero Section có video xe chạy trên cao tốc, bộ lọc phân khúc xe, lưới 12 mẫu xe kèm bảng thông số kỹ thuật chi tiết khi xem từng xe, bảng so sánh phân khúc, form đặt lịch lái thử có kiểm tra `:focus`, và footer có thông tin sinh viên thực hiện: Nguyễn Tấn Điền - MSSV: 125000260."
 
-## 1. Thông tin chung
+## 2. Quá trình tinh chỉnh & Giải quyết sự cố (Iteration Iterations)
+### Lần 1: Dựng khung Semantic HTML & CSS Variable
+- **Prompt đã dùng:**
+  > "Hãy kiểm tra và refactor lại toàn bộ mã nguồn HTML và CSS vừa tạo:
+  > - Thay toàn bộ các thẻ generic `div` ở các phần tử mang ý nghĩa nội dung: mỗi dòng xe trong showroom chuyển thành thẻ `<article class="car-card" tabindex="0">`, ảnh xe phải bọc trong `<figure>`, giá bán hiển thị trong `<figcaption>`, thanh điều hướng và bộ lọc dùng `<nav>`, mẹo tư vấn dùng `<aside>`.
+  > - Trong CSS, thiết lập toàn bộ biến tại `:root` bao gồm: `--primary-color`, `--accent-color`, `--dark-surface`, `--card-bg`, font chữ `Plus Jakarta Sans` & `Inter`, các nấc spacing (`--space-xs` đến `--space-3xl`), border-radius và box-shadow. Chuyển sang phong cách giao diện sáng (Modern Luxury Light Theme) sang trọng, lịch lãm."
 
-| Mục | Chi tiết |
-|---|---|
-| **Họ và tên** | Nguyễn Tấn Điền |
-| **MSSV** | 125000260 |
-| **Trường / Khoa** | Khoa Công nghệ Thông tin — Trường Đại học Lạc Hồng (LHU) |
-| **Đề tài** | **AutoPrestige Vietnam** — Nền tảng Quảng bá & Trải nghiệm Xe Hơi Đa Phân Khúc (Từ Hạng Vừa, Hạng Sang đến Siêu Xe Cao Cấp) |
-| **Công cụ AI sử dụng** | Google Antigravity & Gemini |
-| **GitHub Repository** | [https://github.com/NTanDien/Dien_NguyenTan_125000260.git](https://github.com/NTanDien/Dien_NguyenTan_125000260.git) |
-| **Link Live Preview (GitHub Pages)** | [https://ntandien.github.io/Dien_NguyenTan_125000260/](https://ntandien.github.io/Dien_NguyenTan_125000260/) |
+- **Kết quả AI tạo ra:**
+  - AI đã thay thế toàn bộ các khối `div` chính thành các thẻ ngữ nghĩa Semantic HTML5 chuẩn mực (`header`, `nav`, `main`, `section`, `article`, `figure`, `figcaption`, `aside`, `footer`).
+  - Toàn bộ màu sắc và khoảng cách được khai báo đồng bộ vào `:root`, chuyển giao diện sang nền sáng ngọc trai thanh lịch `#f8fafc`, tôn vinh hình ảnh các dòng xe.
 
----
+- **Nhận xét & Tinh chỉnh của SV:**
+  - AI xài thẻ `<div>` nhiều quá ở bản nháp ban đầu, đã nhắc AI sửa lại thành `<main>`, `<section>`, `<article>`, `<figure>`, `<figcaption>`.
+  - Một số link ảnh xe trên Unsplash bị mã lỗi 404 dẫn đến mất hình ảnh sản phẩm, SV đã phát hiện và yêu cầu AI rà soát toàn bộ HTTP status của ảnh để thay thế bằng các link ảnh sắc nét $100\%$ không bị lỗi.
+  - Thêm thuộc tính `tabindex="0"` vào thẻ `<article>` và viết hiệu ứng `:focus-visible` giúp người dùng điều hướng bằng phím Tab thuận tiện (chuẩn Accessibility).
 
-## 2. Yêu cầu ban đầu (System / Initial Prompt)
+### Lần 2: Tích hợp thư viện Animate.css & AOS
+- **Prompt đã dùng:**
+  > "Hãy tích hợp hai thư viện Animate.css và AOS (Animate On Scroll) qua CDN:
+  > - Thêm link stylesheet Animate.css v4.1.1 và AOS v2.3.1 vào `<head>`.
+  > - Gắn class `animate__animated animate__fadeInUp` và `animate__bounceIn` vào tiêu đề và nút bấm Hero Section.
+  > - Gắn thuộc tính `data-aos="fade-up"` vào các tiêu đề section, lưới thẻ xe, thẻ dịch vụ, bảng so sánh và form liên hệ.
+  > - Nhúng script khởi tạo `AOS.init()` trước thẻ đóng `</body>`."
 
-> **Prompt tổng quan khởi tạo khung website:**
->
-> Hãy tạo một trang web hoàn chỉnh cho đề tài **"AutoPrestige Vietnam"** — Nền tảng Quảng bá & Trải nghiệm Xe Hơi Đa Phân Khúc (từ Hạng Vừa & Gia Đình, Sedan & SUV Hạng Sang đến Siêu Xe Cao Cấp) đáp ứng đầy đủ yêu cầu kiểm tra giữa kỳ:
->
-> - **Chuẩn Semantic HTML5 nghiêm ngặt:** Sử dụng đúng và đầy đủ các thẻ ngữ nghĩa: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<figure>`, `<figcaption>`, `<aside>`, `<footer>` (tuyệt đối không lạm dụng thẻ generic `<div>`).
-> - **CSS & CSS Variables:** Sử dụng `:root` quản lý toàn bộ hệ thống màu sắc (`--primary-color`, `--accent-color`, `--dark-surface`...), font chữ (`Plus Jakarta Sans` & `Inter`), spacing, bo góc và đổ bóng. Bố cục hiện đại kết hợp CSS Grid và Flexbox, responsive mượt mà dưới 920px.
-> - **Tương tác & Thư viện hiệu ứng:**
->   + Tích hợp thư viện **Animate.css (v4.1.1)** cho tiêu đề, huy hiệu và nút CTA trong Hero Section.
->   + Tích hợp thư viện **AOS (Animate On Scroll v2.3.1)** cho các section và card khi cuộn trang.
->   + Tự viết hiệu ứng `:hover`, `:focus` mượt mà cho nút bấm, card xe (`.car-card`), card dịch vụ và form input.
-> - **Các tính năng showroom xe hơi:**
->   + Hero Showroom ấn tượng với video nền xe chạy trên cao tốc (`assets/hero-car-loop.mp4`).
->   + Bộ lọc phân khúc xe và lưới 12 mẫu xe đa dạng kèm popup xem chi tiết thông số kỹ thuật từng xe.
->   + Bảng so sánh 3 phân khúc xe kèm mẹo từ chuyên gia (`<aside>`).
->   + Form Đặt lịch lái thử & Nhận báo giá lăn bánh có kiểm tra `:focus`.
->   + Footer đầy đủ thông tin sinh viên thực hiện: **Nguyễn Tấn Điền - MSSV: 125000260 - Khoa CNTT, Trường Đại học Lạc Hồng**.
+- **Thách thức gặp phải:**
+  - Khi hover chuột vào thẻ xe `.car-card`, hiệu ứng nâng thẻ `transform: translateY(-8px)` bị mất hoặc giật cục, không hoạt động trơn tru. Nguyên nhân do thư viện AOS tự động gán inline styles `transform: translate3d(0, 0, 0)` khi cuộn trang, dẫn đến xung đột với thuộc tính `transform` của CSS hover.
+  - Trang web xuất hiện thanh cuộn ngang (horizontal scrollbar) không mong muốn khi AOS animate các phần tử từ ngoài màn hình vào.
 
----
+- **Cách sửa prompt (Debug prompt):**
+  > "Khắc phục 2 lỗi xung đột thư viện:
+  > 1. Trong `style.css`, tách riêng thuộc tính transition thành `transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);` (tuyệt đối không dùng `transition: all`). Trong script khởi tạo, thêm cấu hình `{ once: true, duration: 800, offset: 60 }` để AOS chỉ kích hoạt 1 lần duy nhất rồi nhường quyền điều khiển `transform` cho CSS `:hover`.
+  > 2. Thêm thuộc tính `overflow-x: hidden` trên cả thẻ `html` và `body` để triệt tiêu hoàn toàn hiện tượng thanh cuộn ngang do AOS tạo ra."
 
-## 3. Quá trình tinh chỉnh & Giải quyết sự cố (Iterations)
+## 3. Đánh giá cá nhân về quá trình Vibe Coding
+- **AI đã giúp bạn tiết kiệm thời gian ở phần nào nhất?**
+  - AI giúp tiết kiệm nhiều thời gian nhất ở khâu **dựng khung Semantic HTML5 và nhập liệu thông số kỹ thuật chi tiết của 12 dòng xe** (động cơ, mã lực, hộp số, mô-men xoắn, an toàn). Nếu làm thủ công sẽ mất nhiều giờ để tìm kiếm và định dạng dữ liệu.
+  - Tiết kiệm thời gian thiết lập hệ thống CSS Variables (`:root`) đồng bộ và viết các media queries responsive đa thiết bị.
 
-### 🔧 Lần 1: Dựng khung Semantic HTML & Thiết lập CSS Variables `:root`
-
-* **Prompt đã dùng:**
-  > "Hãy tái cấu trúc toàn bộ HTML theo chuẩn Semantic nghiêm ngặt:
-  > - Thay thế các thẻ generic `div` thành thẻ ngữ nghĩa: mỗi mẫu xe là một `<article class="car-card">` có `tabindex="0"`, ảnh xe bọc trong `<figure>`, giá tiền đặt trong `<figcaption>`, thanh lọc xe đặt trong `<nav aria-label="...">`, mẹo tư vấn bọc bằng `<aside>`.
-  > - Thiết lập toàn bộ bảng màu và quy chuẩn thiết kế tại `:root` trong `style.css` bao gồm: màu nền sáng sang trọng (`--primary-color: #f8fafc; --card-bg: #ffffff;`), màu nhấn đỏ ruby (`--accent-color: #e11d48;`), màu chữ tương phản cao, typography cùng hệ thống spacing, border-radius và box-shadow."
-
-* **Kết quả AI:**
-  - AI đã refactor toàn bộ mã nguồn sang chuẩn HTML5 Semantic với hơn 8 loại thẻ ngữ nghĩa khác nhau.
-  - Xây dựng thành công hệ thống hơn 25 biến CSS trong `:root`, giúp giao diện sáng sủa, thanh lịch và đồng bộ phong cách showroom hiện đại.
-
-* **Nhận xét & Tinh chỉnh:**
-  - Cấu trúc layout rất chuẩn chỉnh, tuy nhiên các thẻ xe và nút bấm cần được bổ sung thêm hiệu ứng `:focus-visible` để đạt chuẩn trợ năng (Accessibility) và tăng trải nghiệm thị giác khi rê chuột.
-
----
-
-### 🔧 Lần 2: Tích hợp Animate.css, AOS & Debug xử lý xung đột Animation khi cuộn / hover
-
-* **Prompt đã dùng:**
-  > "Hãy tích hợp CDN của thư viện **Animate.css (v4.1.1)** và **AOS (v2.3.1)** vào website:
-  > - Sử dụng Animate.css (`animate__fadeInUp`, `animate__bounceIn`, `animate__delay-1s`) cho tiêu đề, badge và nút CTA trong Hero Section.
-  > - Gắn `data-aos="fade-up"` vào các tiêu đề section, lưới 12 thẻ xe, thẻ dịch vụ, bảng so sánh và form đăng ký.
-  > - **Thách thức:** Xử lý triệt để xung đột `transform` giữa hiệu ứng `:hover` của CSS (`transform: translateY(-8px)`) và thuộc tính `transform` do AOS điều khiển khi cuộn trang, tránh hiện tượng card bị giật hoặc mất hiệu ứng hover."
-
-* **Thách thức gặp phải & Cách debug prompt:**
-  - Khi AOS kích hoạt hiệu ứng cuộn, thư viện này tự động gán inline styles `transform: translate3d(...)` vào phần tử. Nếu trong CSS dùng `transition: all`, thuộc tính này sẽ ghi đè và làm mất hiệu ứng hover nâng card của người dùng.
-  - **Cách debug & xử lý:** 
-    1. Trong CSS, tách bạch rõ ràng các thuộc tính transition: `transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);` (tuyệt đối không dùng `transition: all`).
-    2. Khởi tạo AOS với tùy chọn `{ once: true, duration: 800, offset: 60 }` để sau khi phần tử xuất hiện trong khung nhìn, AOS hoàn tất animation và trả lại toàn quyền điều khiển `transform: translateY(-8px)` cho trạng thái `:hover`.
-    3. Thêm `overflow-x: hidden` trên cả `html` và `body` để loại bỏ thanh cuộn ngang ngoài ý muốn khi AOS dịch chuyển phần tử từ ngoài màn hình vào.
-
----
-
-## 4. Đánh giá cá nhân
-
-### ✅ AI giúp tiết kiệm thời gian ở phần nào?
-
-1. **Khởi tạo bộ khung Semantic HTML5 và CSS Variables (Tiết kiệm ~80% thời gian):** AI tạo ra cấu trúc chuẩn chỉ trong vài giây, bao gồm đầy đủ dữ liệu thông số kỹ thuật chi tiết của 12 dòng xe hơi từ phổ thông đến siêu xe.
-2. **Gợi ý giải pháp kiến trúc và tích hợp thư viện (Tiết kiệm ~70% thời gian):** AI cung cấp chính xác các đường dẫn CDN, cấu hình thuộc tính data của AOS và các class của Animate.css mà không cần phải tra cứu thủ công tài liệu.
-3. **Phát hiện và xử lý lỗi xung đột CSS/JS:** AI phân tích chính xác nguyên nhân gây giật layout giữa thuộc tính `transform` của AOS và CSS hover, từ đó đưa ra hướng khắc phục chuẩn mực.
-
-### 📖 Bài học rút ra khi prompt cho AI
-
-1. **Bám sát đề bài và tiêu chí chấm điểm:** Cần đưa các yêu cầu kỹ thuật cốt lõi (như Semantic HTML5, CSS Variables, thư viện Animate.css, AOS, cấu trúc nộp bài) trực tiếp vào prompt để AI không bỏ sót bất kỳ hạng mục nào trong barem điểm.
-2. **Chia nhỏ bài toán theo từng bước lặp (Iteration):** Thay vì yêu cầu tất cả trong một lần duy nhất, việc phân chia thành Lần 1 (dựng khung cấu trúc & style) và Lần 2 (tích hợp thư viện & debug chuyển động) giúp kiểm soát chất lượng code chặt chẽ và không phát sinh lỗi chồng chéo.
-3. **Đóng vai trò là người định hướng:** AI là công cụ tăng năng suất đắc lực, nhưng lập trình viên phải là người thấu hiểu bản chất kỹ thuật (tại sao xảy ra xung đột `transform`, cơ chế hoạt động của `overflow-x`) để ra lệnh điều chỉnh đúng trọng tâm.
-
----
-
-> **Nguyễn Tấn Điền — MSSV: 125000260**  
-> Khoa Công nghệ Thông tin — Trường Đại học Lạc Hồng (LHU)  
-> Ngày hoàn thành: 20/10/2026
+- **Bài học rút ra khi đặt câu hỏi (Prompt) cho AI trong thiết kế web?**
+  - **Prompt phải cụ thể và có ràng buộc kỹ thuật rõ ràng:** Cần chỉ định chính xác tên thẻ HTML (`article`, `figure` thay vì `div`), tên thư viện (`Animate.css`, `AOS`) và quy chuẩn cấu trúc để AI không sinh code tự do hoặc dùng các phương án generic.
+  - **Chia nhỏ quá trình thành các lần lặp (Iterations):** Không nên yêu cầu tất cả trong một lần prompt duy nhất. Hãy chia thành Lần 1 (khung cấu trúc & CSS variables) và Lần 2 (tích hợp thư viện hiệu ứng & debug).
+  - **Luôn kiểm tra và nghiệm thu thực tế:** AI có thể sử dụng link tài nguyên lỗi (như link ảnh 404) hoặc tạo xung đột CSS (`transform` giữa AOS và `:hover`). Sinh viên cần hiểu rõ bản chất kỹ thuật để debug prompt và dẫn dắt AI tạo ra sản phẩm hoàn chỉnh nhất.
