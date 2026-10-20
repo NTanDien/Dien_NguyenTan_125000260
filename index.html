@@ -15,6 +15,12 @@
   <!-- FontAwesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- Animate.css v4.1.1 (Yêu cầu đề thi mục 2) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- AOS v2.3.1 (Yêu cầu đề thi mục 2) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -52,17 +58,17 @@
         </video>
       </figure>
       <div class="hero-overlay"></div>
-      <div class="hero-content container">
-        <span class="hero-badge">
+      <div class="hero-content container animate__animated animate__fadeInUp">
+        <span class="hero-badge animate__animated animate__bounceIn animate__delay-1s">
           <i class="fa-solid fa-star"></i> Đại lý Ủy quyền Chính hãng
         </span>
         <h1 class="animate__animated animate__fadeInUp animate__delay-1s">
           Trải nghiệm Đẳng cấp<br /><span class="text-gradient">Mọi Phân Khúc Xe Hơi</span>
         </h1>
-        <p class="hero-desc">
+        <p class="hero-desc animate__animated animate__fadeInUp animate__delay-2s">
           Từ Sedan gia đình tiện nghi, SUV hạng sang đến Siêu xe Cao cấp — AutoPrestige Vietnam đồng hành cùng bạn trên mọi hành trình.
         </p>
-        <div class="hero-cta">
+        <div class="hero-cta animate__animated animate__fadeInUp animate__delay-2s">
           <a href="#showroom" class="btn btn-primary"><i class="fa-solid fa-eye"></i> Khám phá Showroom</a>
           <a href="#booking" class="btn btn-outline"><i class="fa-solid fa-calendar-plus"></i> Đặt lịch Lái thử</a>
         </div>
@@ -72,14 +78,14 @@
     <!-- ============ SHOWROOM SECTION ============ -->
     <section class="showroom" id="showroom">
       <div class="container">
-        <header class="section-header">
+        <header class="section-header" data-aos="fade-up">
           <span class="section-tag"><i class="fa-solid fa-warehouse"></i> Showroom</span>
           <h2>Bộ sưu tập Xe nổi bật</h2>
           <p>Khám phá đa dạng mẫu xe từ phân khúc phổ thông đến siêu sang — tất cả trong một nền tảng duy nhất.</p>
         </header>
 
                 <!-- Bộ lọc phân khúc Pure CSS (Radio Tabs) -->
-        <div class="filter-controls">
+        <div class="filter-controls" data-aos="fade-up" data-aos-delay="100">
           <input type="radio" name="car-filter" id="filter-all" class="filter-radio" checked />
           <label for="filter-all" class="filter-label"><i class="fa-solid fa-border-all"></i> Tất cả</label>
 
@@ -97,7 +103,7 @@
         <div class="car-grid" id="car-grid">
 
           <!-- 1. Hạng Vừa & Gia Đình: Toyota Camry -->
-          <article class="car-card" tabindex="0" data-segment="family">
+          <article class="car-card" tabindex="0" data-segment="family" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?auto=format&fit=crop&w=800&q=80" alt="Toyota Camry 2.5Q 2026" loading="lazy" />
               <span class="car-card__badge badge-family"><i class="fa-solid fa-people-roof"></i> Gia Đình</span>
@@ -124,7 +130,7 @@
           </article>
 
           <!-- 2. Hạng Vừa & Gia Đình: Mazda CX-5 -->
-          <article class="car-card" tabindex="0" data-segment="family">
+          <article class="car-card" tabindex="0" data-segment="family" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80" alt="Mazda CX-5 2.0 Premium 2026" loading="lazy" />
               <span class="car-card__badge badge-family"><i class="fa-solid fa-people-roof"></i> Gia Đình</span>
@@ -151,7 +157,7 @@
           </article>
 
           <!-- 3. Hạng Vừa & Gia Đình: Hyundai Santa Fe -->
-          <article class="car-card" tabindex="0" data-segment="family">
+          <article class="car-card" tabindex="0" data-segment="family" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80" alt="Hyundai Santa Fe 2026" loading="lazy" />
               <span class="car-card__badge badge-family"><i class="fa-solid fa-people-roof"></i> Gia Đình</span>
@@ -178,7 +184,7 @@
           </article>
 
           <!-- 4. Hạng Vừa & Gia Đình: Honda CR-V e:HEV -->
-          <article class="car-card" tabindex="0" data-segment="family">
+          <article class="car-card" tabindex="0" data-segment="family" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80" alt="Honda CR-V e:HEV RS 2026" loading="lazy" />
               <span class="car-card__badge badge-family"><i class="fa-solid fa-people-roof"></i> Gia Đình</span>
@@ -205,7 +211,7 @@
           </article>
 
           <!-- 5. Sedan & SUV Hạng Sang: BMW 530i M Sport -->
-          <article class="car-card" tabindex="0" data-segment="luxury">
+          <article class="car-card" tabindex="0" data-segment="luxury" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80" alt="BMW 5 Series 530i M Sport 2026" loading="lazy" />
               <span class="car-card__badge badge-luxury"><i class="fa-solid fa-gem"></i> Hạng Sang</span>
@@ -232,7 +238,7 @@
           </article>
 
           <!-- 6. Sedan & SUV Hạng Sang: Mercedes GLC 300 AMG -->
-          <article class="car-card" tabindex="0" data-segment="luxury">
+          <article class="car-card" tabindex="0" data-segment="luxury" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1617531653332-bd46c24f2068?auto=format&fit=crop&w=800&q=80" alt="Mercedes-Benz GLC 300 AMG 2026" loading="lazy" />
               <span class="car-card__badge badge-luxury"><i class="fa-solid fa-gem"></i> Hạng Sang</span>
@@ -259,7 +265,7 @@
           </article>
 
           <!-- 7. Sedan & SUV Hạng Sang: Audi A6 S-Line -->
-          <article class="car-card" tabindex="0" data-segment="luxury">
+          <article class="car-card" tabindex="0" data-segment="luxury" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80" alt="Audi A6 S-Line TFSI 2026" loading="lazy" />
               <span class="car-card__badge badge-luxury"><i class="fa-solid fa-gem"></i> Hạng Sang</span>
@@ -286,7 +292,7 @@
           </article>
 
           <!-- 8. Sedan & SUV Hạng Sang: Lexus RX 350 Luxury -->
-          <article class="car-card" tabindex="0" data-segment="luxury">
+          <article class="car-card" tabindex="0" data-segment="luxury" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=800&q=80" alt="Lexus RX 350 Luxury 2026" loading="lazy" />
               <span class="car-card__badge badge-luxury"><i class="fa-solid fa-gem"></i> Hạng Sang</span>
@@ -313,7 +319,7 @@
           </article>
 
           <!-- 9. Siêu Xe Cao Cấp: Porsche 911 Carrera S -->
-          <article class="car-card" tabindex="0" data-segment="supercar">
+          <article class="car-card" tabindex="0" data-segment="supercar" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=800&q=80" alt="Porsche 911 Carrera S 2026" loading="lazy" />
               <span class="car-card__badge badge-supercar"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe</span>
@@ -340,7 +346,7 @@
           </article>
 
           <!-- 10. Siêu Xe Cao Cấp: Lamborghini Huracán EVO -->
-          <article class="car-card" tabindex="0" data-segment="supercar">
+          <article class="car-card" tabindex="0" data-segment="supercar" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1580414057403-c5f451f30e1c?auto=format&fit=crop&w=800&q=80" alt="Lamborghini Huracán EVO 2026" loading="lazy" />
               <span class="car-card__badge badge-supercar"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe</span>
@@ -367,7 +373,7 @@
           </article>
 
           <!-- 11. Siêu Xe Cao Cấp: Ferrari F8 Tributo -->
-          <article class="car-card" tabindex="0" data-segment="supercar">
+          <article class="car-card" tabindex="0" data-segment="supercar" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800&q=80" alt="Ferrari F8 Tributo 2026" loading="lazy" />
               <span class="car-card__badge badge-supercar"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe</span>
@@ -394,7 +400,7 @@
           </article>
 
           <!-- 12. Siêu Xe Cao Cấp: McLaren 720S Spider -->
-          <article class="car-card" tabindex="0" data-segment="supercar">
+          <article class="car-card" tabindex="0" data-segment="supercar" data-aos="fade-up" data-aos-delay="150">
             <figure class="car-card__image">
               <img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?auto=format&fit=crop&w=800&q=80" alt="McLaren 720S Spider 2026" loading="lazy" />
               <span class="car-card__badge badge-supercar"><i class="fa-solid fa-jet-fighter"></i> Siêu Xe</span>
@@ -427,7 +433,7 @@
     <!-- ============ DỊCH VỤ & QUYỀN LỢI ============ -->
     <section class="services" id="services">
       <div class="container">
-        <header class="section-header">
+        <header class="section-header" data-aos="fade-up">
           <span class="section-tag"><i class="fa-solid fa-hand-holding-heart"></i> Quyền lợi</span>
           <h2>Dịch vụ &amp; Quyền lợi Khách hàng</h2>
           <p>AutoPrestige Vietnam cam kết mang đến trải nghiệm sở hữu xe toàn diện và an tâm nhất.</p>
@@ -435,7 +441,7 @@
 
         <div class="services-grid">
 
-          <article class="service-card">
+          <article class="service-card" data-aos="fade-up" data-aos-delay="150">
             <div class="service-card__icon">
               <i class="fa-solid fa-percent"></i>
             </div>
@@ -443,7 +449,7 @@
             <p>Hỗ trợ vay tối đa 80% giá trị xe, thủ tục nhanh gọn chỉ trong 24 giờ. Hợp tác cùng 12 ngân hàng hàng đầu.</p>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-aos="fade-up" data-aos-delay="150">
             <div class="service-card__icon">
               <i class="fa-solid fa-arrow-right-arrow-left"></i>
             </div>
@@ -451,7 +457,7 @@
             <p>Định giá xe cũ minh bạch qua AI, hỗ trợ bù trừ linh hoạt khi nâng cấp lên xe mới bất kỳ phân khúc nào.</p>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-aos="fade-up" data-aos-delay="150">
             <div class="service-card__icon">
               <i class="fa-solid fa-shield-halved"></i>
             </div>
@@ -459,7 +465,7 @@
             <p>Chế độ bảo hành chính hãng lên đến 5 năm hoặc 150.000 km, áp dụng toàn quốc tại hơn 50 đại lý.</p>
           </article>
 
-          <article class="service-card">
+          <article class="service-card" data-aos="fade-up" data-aos-delay="150">
             <div class="service-card__icon">
               <i class="fa-solid fa-truck-medical"></i>
             </div>
@@ -474,13 +480,13 @@
     <!-- ============ BẢNG SO SÁNH TƯ VẤN ============ -->
     <section class="compare" id="compare">
       <div class="container">
-        <header class="section-header">
+        <header class="section-header" data-aos="fade-up">
           <span class="section-tag"><i class="fa-solid fa-scale-balanced"></i> So sánh</span>
           <h2>Tư vấn phân khúc phù hợp với bạn</h2>
           <p>So sánh nhanh ba phân khúc xe để tìm lựa chọn phù hợp nhất với nhu cầu và ngân sách của bạn.</p>
         </header>
 
-        <div class="compare-table-wrap">
+        <div class="compare-table-wrap" data-aos="fade-up" data-aos-delay="150">
           <table class="compare-table">
             <thead>
               <tr>
@@ -531,7 +537,7 @@
           </table>
         </div>
 
-        <aside class="compare-tip">
+        <aside class="compare-tip" data-aos="fade-up" data-aos-delay="200">
           <i class="fa-solid fa-lightbulb"></i>
           <p><strong>Mẹo từ chuyên gia:</strong> Nếu bạn lần đầu mua xe, hãy bắt đầu từ phân khúc <em>Hạng Vừa & Gia Đình</em> — chi phí vận hành thấp, giá trị bán lại ổn định, và công nghệ an toàn đã rất đầy đủ.</p>
         </aside>
@@ -541,13 +547,13 @@
     <!-- ============ FORM ĐẶT LỊCH LÁI THỬ ============ -->
     <section class="booking" id="booking">
       <div class="container">
-        <header class="section-header">
+        <header class="section-header" data-aos="fade-up">
           <span class="section-tag"><i class="fa-solid fa-calendar-check"></i> Đặt lịch</span>
           <h2>Đặt lịch Lái thử &amp; Nhận Báo giá Lăn bánh</h2>
           <p>Điền thông tin bên dưới, đội ngũ tư vấn AutoPrestige sẽ liên hệ bạn trong vòng 30 phút.</p>
         </header>
 
-        <form class="booking-form" id="booking-form" novalidate>
+        <form class="booking-form" id="booking-form" data-aos="fade-up" data-aos-delay="150" novalidate>
           <div class="form-grid">
             <div class="form-group">
               <label for="fullname"><i class="fa-solid fa-user"></i> Họ và tên <span class="required">*</span></label>
@@ -1003,5 +1009,15 @@
       </div>
     </div>
   </footer>
+  <!-- ============ AOS SCRIPT (THƯ VIỆN HIỆU ỨNG CUỘN TRANG BẮT BUỘC THEO ĐỀ MỤC 2) ============ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 60
+    });
+  </script>
 </body>
 </html>
